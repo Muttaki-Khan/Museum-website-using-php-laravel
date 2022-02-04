@@ -73,6 +73,7 @@ Route::get('/{id}','FrontController@singleItem');
 
 Route::get('/item', 'FrontController@item');
 Route::get('/introduction', 'FrontController@aboutIntro');
+
 Route::get('/goals', 'FrontController@aboutGoal');
 
 
