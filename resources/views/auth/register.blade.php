@@ -45,6 +45,8 @@
                                 <select id="role_id" class="form-control{{ $errors->has('role_id') ? 'is-invalid' : '' }}" name="role_id">
                                     <option value="1">Admin</option>
                                     <option value="2">User</option>
+                                    <option value="3">Manager</option>
+
                                     
                                 </select>
                                 @if ($errors->has('role_id'))

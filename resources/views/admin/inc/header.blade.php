@@ -5,7 +5,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">UM E-Museum</a>
+                <a class="navbar-brand" href="{{url('/')}}">UM E-Museum</a>
             </div>
 
 

@@ -1,5 +1,5 @@
 <?php
-
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,10 +30,26 @@ Auth::routes();
 Route::group(['middleware' => ['web', 'auth']], function(){
     Route::get('/home', function(){
         if(Auth::user()->role_id ==1 ){
-            return view('admin.home.homeContent');
+			$user = User::where('id',Auth::id())->first();
+			$theme = $user->theme;
+			$logo = $user->logo;
+			$font = $user->font;
+			$img1 = $user->img1;
+			$img2 = $user->img2;
+       	 	$img3 = $user->img3;
+       
+            return view('admin.home.homeContent')->with('theme', $theme, 'logo',$logo ,'font',$font,'img1',$img1,'img2',$img2,'img3',$img3);
         
-        }else{
-            return view('frontView.home.homeContent');
+        } else{
+			$user = User::where('id',1)->first();
+			$theme = $user->theme;
+			$logo = $user->logo;
+			$font = $user->font;
+			$img1 = $user->img1;
+			$img2 = $user->img2;
+        	$img3 = $user->img3;
+        	$textcolor = $user->$textcolor;
+            return view('frontView.home.homeContent', compact('theme','logo','font','img1','img2','img3','textcolor'));
         }
     });
 });
@@ -42,18 +58,16 @@ Route::group(['middleware' => ['web', 'auth']], function(){
 //Route::get('/home', 'HomeController@index');
 
 
-
 Route::get('/','FrontController@index');
 
 Route::get('/mainhome','MainHomeController@main');
 
 
 
-
 Route::get('/staff', 'FrontController@staff');
 
 Route::get('/item', 'FrontController@item');
-Route::get('/view/{id}','FrontController@singleItem');
+Route::get('/{id}','FrontController@singleItem');
 
 
 
@@ -125,6 +139,25 @@ Route::get('/msg/kill/{id}',[
 	Route::get('/about/edit/{id}','AboutController@edit');
 	Route::post('/about/edit','AboutController@update');
 	Route::get('/about/delete/{id}','AboutController@delete');
+
+	
+	//themecontrol
+	Route::get('/theme/manage','ThemeController@manage');
+	Route::get('/theme/color/edit/{id}','ThemeController@color');
+	Route::post('/theme/color/edit','ThemeController@savecolor');
+	Route::get('/theme/logo/edit/{id}','ThemeController@logo');
+	Route::post('/theme/logo/edit','ThemeController@savelogo');
+	Route::get('/theme/font/edit/{id}','ThemeController@font');
+	Route::post('/theme/font/edit','ThemeController@savefont');
+	Route::get('/theme/image/edit/{id}','ThemeController@image');
+	Route::post('/theme/image/edit','ThemeController@saveimage');
+	Route::get('/theme/textcolor/edit/{id}','ThemeController@textcolor');
+	Route::post('/theme/textcolor/edit','ThemeController@savetextcolor');
+	Route::get('/theme/footimage/edit/{id}','ThemeController@footimage');
+	Route::post('/theme/footimage/edit','ThemeController@savefootimage');
+
+
+
 
 	//============= Admin.Exhibition =============
 	Route::get('/exhi/entry', 'ExhibitionController@index');

@@ -30,13 +30,13 @@
 @section('feature')
 		
 	<div class="panel-body">
-		      <font face = "Times New Roman" size = "5" style="font-size:5vw;">Introduction</font><br />
+		      <font face = "Times New Roman" size = "5" style="font-size:2vw;">Introduction</font><br/>
 
 		
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Introduction</th>
+                                        <h3><th>Introduction</th></h3>
                                         
                                        
                                         

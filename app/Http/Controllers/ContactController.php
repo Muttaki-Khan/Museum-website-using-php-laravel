@@ -6,6 +6,9 @@ use Session;
 use App\contacts;
 use App\Messages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route; 
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class ContactController extends Controller
 {

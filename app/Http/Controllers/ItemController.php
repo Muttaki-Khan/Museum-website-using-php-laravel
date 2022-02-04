@@ -15,7 +15,7 @@ class ItemController extends Controller
   }
   public function save(Request $request){
 
-        $item = new item();
+      $item = new item();
 
 
   		$item->itemName = $request->name;
@@ -27,9 +27,9 @@ class ItemController extends Controller
   		$item->save();
 
       $lastId = $item->id;
+    
 
       $pictureInfo = $request->file('pic');
-
       $picName = $lastId.$pictureInfo->getClientOriginalName();
 
       $folder = "itemImage/";

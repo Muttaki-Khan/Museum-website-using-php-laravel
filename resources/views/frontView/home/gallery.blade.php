@@ -31,7 +31,7 @@
 @endsection
 
 @section('feature')
-      <font face = "Times New Roman" size = "5" style="font-size:5vw;">Gallery</font><br />
+      <font face = "Times New Roman" class="{{$font}}" size = "2" style="font-size:2vw;">Gallery</font><br />
 <section class="gallery-area">
 		<div class="container">
 			<div class="row align-items-center">
@@ -40,7 +40,7 @@
 					<div class="single-gallery">
 						<div class="overlay"></div>
 						<figure>
-							<img src="{{asset($img->pic)}}" alt="img" width="200" height="150">
+							<img src="{{asset($img->pic)}}" alt="img" width="400" height="250">
 						</figure>
 						<div class="icon">
 							<a href="{{asset($img->pic)}}" class="photo-gallery-pop-up">

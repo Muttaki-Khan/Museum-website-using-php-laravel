@@ -33,12 +33,12 @@
 @section('feature')
 <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-<img src="{{asset($item->pic)}} " width="300"><br><hr>
-	<h3>Name:</h3>{{$item->itemName}}<br>
-	<h3>Category:</h3>{{$item->catName}}<br>
-	<h3>Code:</h3>{{$item->itemCode}}<br>
-	<p><h3>Information:</h3>{{$item->information}}<br></p>
+            <div class="col-md-8 col-md-offset-3">
+<img src="{{asset($item->pic)}} " width="400"><br><hr>
+	<h2>Name: {{$item->itemName}}</h2>
+	<h2>Category: {{$item->catName}}</h2>
+	<h2>Code: {{$item->itemCode}}</h2><br>
+	<p><h2>Information:</h2> {{$item->information}}<br></p>
 
  </div>
             </div>

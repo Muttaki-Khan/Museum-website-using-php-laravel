@@ -21,6 +21,7 @@ class MessageController extends Controller
     {
         $msg = Messages::orderBy('id','desc')->get();
         $msgbar = Messages::orderBy('id','desc')->get()->take(3);
+
         return view('admin.home.showMessage',compact('msg','msgbar'));
     }
 

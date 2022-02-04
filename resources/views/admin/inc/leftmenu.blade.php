@@ -96,6 +96,17 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li>
+                            <a href="#"><i class="glyphicon glyphicon-erase"></i>Website Theme Control <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                                  
+                                <li>
+                                    <a href="{{ url('/theme/manage')}}">Theme Control</a>
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                         
                     </ul>
                 </div>
