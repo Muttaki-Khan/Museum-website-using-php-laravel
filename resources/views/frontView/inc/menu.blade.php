@@ -82,6 +82,7 @@
 <script>
 	window.onload = function() {
 	// document.getElementById("themeID").classList.add('<?php echo $theme; ?>');
+	//console.log('{{$logo}}');
 	document.getElementById("logoID").src='{{$logo}}';
 };
 </script>

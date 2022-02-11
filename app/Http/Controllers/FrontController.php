@@ -24,11 +24,11 @@ class FrontController extends Controller
       if(Auth::user()==null){
         $user = User::where('id',1)->first();
         $latest = item::latest()->first();
+        $latest = $latest->pic;
         // $latest = item::orderBy('id', 'desc')->skip(1)->take(1)->get();
         // $latest = item::where('id','desc')->first();
         // $latest = item::orderBy('created_at', 'desc')->skip(1)->take(1)->get();
-
-        $latest = $latest->pic;
+      
         $theme = $user->theme;
         $logo = $user->logo;
         $font = $user->font;
@@ -79,7 +79,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.aboutIntro', compact('aboutIntro','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.aboutIntro', compact('aboutIntro','theme','logo','font','textcolor','categories','footimg'));
   
         }else{
   
@@ -90,7 +91,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.aboutIntro', compact('aboutIntro','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.aboutIntro', compact('aboutIntro','theme','logo','font','textcolor','categories','footimg'));
         }
     	// return view('frontView.home.aboutIntro',compact('aboutIntro'));
     }
@@ -105,7 +107,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.aboutGoal', compact('aboutGoal','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.aboutGoal', compact('aboutGoal','theme','logo','font','textcolor','categories','footimg'));
   
         }else{
   
@@ -116,7 +119,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.aboutGoal', compact('aboutGoal','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.aboutGoal', compact('aboutGoal','theme','logo','font','textcolor','categories','footimg'));
         }
       // return view('frontView.home.aboutGoal',compact('aboutGoal'));
     }
@@ -131,7 +135,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.exhibition', compact('exhibitionIntro','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.exhibition', compact('exhibitionIntro','theme','logo','font','textcolor','categories','footimg'));
   
         }else{
   
@@ -142,7 +147,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.exhibition', compact('exhibitionIntro','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.exhibition', compact('exhibitionIntro','theme','logo','font','textcolor','categories','footimg'));
         }
       // return view('frontView.home.exhibition',compact('exhibitionIntro'));
     }
@@ -160,7 +166,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.contact', compact('contact','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.contact', compact('contact','theme','logo','font','textcolor','categories','footimg'));
   
         }else{
   
@@ -171,7 +178,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.contact', compact('contact','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.contact', compact('contact','theme','logo','font','textcolor','categories','footimg'));
         }
         
     	// return view('frontView.home.contact',compact('contact'));
@@ -187,7 +195,8 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.staff', compact('staff','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.staff', compact('staff','theme','logo','font','textcolor','categories','footimg'));
   
         }else{
   
@@ -198,20 +207,18 @@ class FrontController extends Controller
           $font = $user->font;
           $textcolor = $user->textcolor;
           $categories = category::all();
-          return view('frontView.home.staff', compact('staff','theme','logo','font','textcolor','categories'));
+          $footimg = $user->footimg;
+          return view('frontView.home.staff', compact('staff','theme','logo','font','textcolor','categories','footimg'));
         }
       // return view('frontView.home.staff',compact('staff'));
     }
     public function item(){
-
-    
 
       $items = DB::table('items')
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')
                   ->paginate(100);
                  // ->where('categories')
-      
 
                  if(Auth::user()==null){
                   $user = User::where('id',1)->first();
@@ -221,7 +228,8 @@ class FrontController extends Controller
                   $font = $user->font;
                   $textcolor = $user->textcolor;
                   $categories = category::all();
-                  return view('frontView.home.item', compact('items','theme','logo','font','textcolor','categories'));
+                  $footimg = $user->footimg;
+                  return view('frontView.home.item', compact('items','theme','logo','font','textcolor','categories','footimg'));
           
                 }else{
           
@@ -232,8 +240,8 @@ class FrontController extends Controller
                   $font = $user->font;
                   $textcolor = $user->textcolor;
                   $categories = category::all();
-            
-                  return view('frontView.home.item', compact('items','theme','logo','font','textcolor','categories'));
+                  $footimg = $user->footimg;
+                  return view('frontView.home.item', compact('items','theme','logo','font','textcolor','categories','footimg'));
                 }
       // return view('frontView.home.item',['items'=>$items]); 
     }
@@ -255,7 +263,8 @@ class FrontController extends Controller
                   $font = $user->font;
                   $textcolor = $user->textcolor;
                   $categories = category::all();
-                  return view('frontView.home.singleItem', compact('item','theme','logo','font','textcolor','categories'));
+                  $footimg = $user->footimg;
+                  return view('frontView.home.singleItem', compact('item','theme','logo','font','textcolor','categories','footimg'));
           
                 }else{
           
@@ -266,7 +275,8 @@ class FrontController extends Controller
                   $font = $user->font;
                   $textcolor = $user->textcolor;
                   $categories = category::all();
-                  return view('frontView.home.singleItem', compact('item','theme','logo','font','textcolor','categories'));
+                  $footimg = $user->footimg;
+                  return view('frontView.home.singleItem', compact('item','theme','logo','font','textcolor','categories','footimg'));
                 }
 
       // return view('frontView.home.singleItem',['item'=>$itemById]); 

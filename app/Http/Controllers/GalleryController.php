@@ -18,26 +18,30 @@ class GalleryController extends Controller
 
         if(Auth::user()==null){
             $user = User::where('id',1)->first();
-    
+            $latest = item::latest()->first();
+            $latest = $latest->pic;
+
             $theme = $user->theme;
             $logo = $user->logo;
             $font = $user->font;
             $textcolor = $user->textcolor;
             $categories = category::all();
-
-            return view('frontView.home.gallery', compact('img','theme','logo','font','textcolor','categories'));
+            $footimg = $user->footimg;
+            
+            return view('frontView.home.gallery', compact('img','theme','logo','font','textcolor','categories','footimg',));
     
           }else{
     
             $user = User::where('id',Auth::id())->first();
             // $user = User::where('id',1)->first();
+            
             $theme = $user->theme;
             $logo = $user->logo;
             $font = $user->font;
             $textcolor = $user->textcolor;
             $categories = category::all();
-
-            return view('frontView.home.gallery', compact('img','theme','logo','font','textcolor','categories'));
+            $footimg = $user->footimg;
+            return view('frontView.home.gallery', compact('img','theme','logo','font','textcolor','categories','footimg'));
           }
         			 
     	// return view('frontView.home.gallery',['img'=>$img]);

@@ -1735,7 +1735,7 @@ ul.multi-column-dropdown li a:hover{
 }
 /*-- coupons --*/
 .coupons{
-background:url(../images/watch2.jpg) no-repeat center;
+/* background:url(../images/watch2.jpg) no-repeat center; */
 background-size:cover;
 -webkit-background-size: cover;
 -o-background-size: cover;

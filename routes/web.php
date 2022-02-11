@@ -67,7 +67,9 @@ Route::get('/mainhome','MainHomeController@main');
 Route::get('/staff', 'FrontController@staff');
 
 Route::get('/item', 'FrontController@item');
-Route::get('/{id}','FrontController@singleItem');
+// Route::get('view/{id}','FrontController@singleItem');
+Route::get('/{id}','FrontController@singleItem')->where('id','[0-9]+');
+
 
 
 

@@ -38,8 +38,8 @@
 <?php 
     $i=0;
      ?>
-    <div class="panel-body {{$font}}">
-        <h1 class="{{$font}}">All Items </h1>
+    <div class="panel-body">
+        <h1>Item</h1>
         
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
@@ -60,10 +60,11 @@
                                         <td>{{$item->itemName}}</td>
                                         <td>{{$item->catName}}</td>
                                         <td>{{$item->itemCode}}</td>
-                                        <td><img src="{{asset($item->pic)}}" width="180"alt-"no pic"></td>
+                                        <td><img src="{{$item->pic}}" width="180"alt-"no pic"></td>
                                         
                                         <!-- <td>{{$item->information}}</td> -->
-                                        <td><a href="{{url('/'.$item->id)}}" target="_blank">View</a> </td>
+                                        <td><a href="{{url('/'.$item->id)}}">View</a> </td>
+
                                         
                                     </tr>
                                     @endforeach

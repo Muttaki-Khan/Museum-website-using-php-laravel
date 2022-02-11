@@ -34,7 +34,7 @@
 <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-3">
-<img src="{{asset($item->pic)}} " width="400"><br><hr>
+<img src= "{{$item->pic}}" width="400"><br><hr>
 	<h2>Name: {{$item->itemName}}</h2>
 	<h2>Category: {{$item->catName}}</h2>
 	<h2>Code: {{$item->itemCode}}</h2><br>
