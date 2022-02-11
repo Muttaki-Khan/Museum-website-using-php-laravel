@@ -42,6 +42,10 @@
                                     <a href="{{url('/theme/footimage/edit/'.$user)}}" class="button" style="color:white;">Footer Banner Image</a>
                                     </tr>
 
+                                    <tr>
+                                    <a href="{{url('/theme/mapimage/edit/'.$user)}}" class="button" style="color:white;">Change Map Image</a>
+                                    </tr>
+
                                 </thead>
 
 

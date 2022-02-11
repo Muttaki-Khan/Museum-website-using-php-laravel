@@ -116,6 +116,41 @@ class ThemeController extends Controller
 
     }
 
+    public function mapimage(){
+
+        $user = Auth::id();
+
+        return view('admin.theme.mapimageEdit',compact('user'));
+
+    }
+
+    public function savemapimage(Request $request)
+    {
+ 
+
+        $user = Auth::id();
+        $mapimage = DB::table('users')->where('id', $user)->update(['mapimage' => $request->mapimage]);
+
+        $pictureInfo = $request->file('mapimage');
+
+        $mapImgName = $user.$pictureInfo->getClientOriginalName();
+
+        $folder = "mapImage/";
+  
+        $pictureInfo->move($folder,$mapImgName);
+
+        $picUrl= $folder.$mapImgName;
+
+        $mapImgPic = User::find($user);
+
+        $mapImgPic->mapimage=$picUrl;
+        $mapImgPic->save();
+
+
+        return redirect('/theme/mapimage/edit/'.$user)->with('message','Map insert successfully');
+
+    }
+
     public function font(){
 
         $user = Auth::id();

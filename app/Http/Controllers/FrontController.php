@@ -158,6 +158,7 @@ class FrontController extends Controller
 
     public function contact(){
         $contact = contacts::all();
+       
         if(Auth::user()==null){
           $user = User::where('id',1)->first();
   
@@ -167,7 +168,8 @@ class FrontController extends Controller
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.contact', compact('contact','theme','logo','font','textcolor','categories','footimg'));
+          $mapimage = $user->mapimage;
+          return view('frontView.home.contact', compact('contact','theme','logo','font','textcolor','categories','footimg','mapimage'));
   
         }else{
   
@@ -179,7 +181,9 @@ class FrontController extends Controller
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.contact', compact('contact','theme','logo','font','textcolor','categories','footimg'));
+          $mapimage = $user->mapimage;
+
+          return view('frontView.home.contact', compact('contact','theme','logo','font','textcolor','categories','footimg','mapimage'));
         }
         
     	// return view('frontView.home.contact',compact('contact'));

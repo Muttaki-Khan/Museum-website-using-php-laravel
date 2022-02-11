@@ -158,6 +158,8 @@ Route::get('/msg/kill/{id}',[
 	Route::post('/theme/textcolor/edit','ThemeController@savetextcolor');
 	Route::get('/theme/footimage/edit/{id}','ThemeController@footimage');
 	Route::post('/theme/footimage/edit','ThemeController@savefootimage');
+	Route::get('/theme/mapimage/edit/{id}','ThemeController@mapimage');
+	Route::post('/theme/mapimage/edit','ThemeController@savemapimage');
 
 
 

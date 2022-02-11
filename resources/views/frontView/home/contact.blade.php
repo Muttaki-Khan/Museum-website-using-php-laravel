@@ -36,7 +36,7 @@
 			<div class="row align-items-start">
 				<div class="col-lg-6 col-md-6">
 				
-				<p><iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.9109097057612!2d101.65102651426284!3d3.118266654212501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4830e8d5d04f%3A0x302a076221b30e17!2sMuseum%20of%20Asian%20Art!5e0!3m2!1sen!2smy!4v1575885977125!5m2!1sen!2smy" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe></p>
+				<p><iframe class="map" src="{{$mapimage}}" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe></p>
 				</div>
 				<div class="offset-lg-1 col-lg-5 col-md-6">
 					<div class="section-title relative">
