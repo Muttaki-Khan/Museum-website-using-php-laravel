@@ -8,13 +8,15 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\category;
-
+use DB;
 class GalleryController extends Controller
 {
     
 
     public function gallery(){
-        $img = item::all();
+        // $img = item::all();
+        $imges = DB::table('items')->orderBy('id')->Paginate(2);
+
 
         if(Auth::user()==null){
             $user = User::where('id',1)->first();
@@ -28,7 +30,7 @@ class GalleryController extends Controller
             $categories = category::all();
             $footimg = $user->footimg;
             
-            return view('frontView.home.gallery', compact('img','theme','logo','font','textcolor','categories','footimg',));
+            return view('frontView.home.gallery', compact('imges','theme','logo','font','textcolor','categories','footimg',));
     
           }else{
     
