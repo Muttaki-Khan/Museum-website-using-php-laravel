@@ -29,12 +29,12 @@
 					</ul>
 				</div>
 				
-				<div class="col-md-4 sign-gd-two ">
+				<div class="col-md-6 sign-gd-two ">
 					<h4>Museum Information</h4>
 					<ul>
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : Museum of Asian Art, <span>University of Malaya.</span></li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : {{$contacts->address}}</li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : {{$contacts->email1}}</li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : {{$contacts->contact1}}</li>
 					</ul>
 				</div>
 				<div class="col-md-4 sign-gd flickr-post">

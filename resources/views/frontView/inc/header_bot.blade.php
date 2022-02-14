@@ -22,7 +22,7 @@
 		<div class="col-md-3 header-left">
 
 			<!-- <h1><a href="index.html" ><img class="imglogo" id="logoID"  src="{{ asset('frontEnd') }}/images/mainlogo.png"></a></h1> -->
-			<h1><a href="" ><img class="imglogo" id="logoID" width="40" height="70"></a></h1>
+			<h1><a href="" ><img class="imglogo" id="logoID"></a></h1>
 
 		</div>
 		<!-- <div class="col-md-3 Soft-header-middle {{$theme}}">

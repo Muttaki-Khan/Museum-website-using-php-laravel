@@ -2036,8 +2036,8 @@ h5.typ1{
   background-color: #757575;
 }
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-  background-color:#6aa82c !important;
-  border-color:#6aa82c !important;
+  background-color:#788d62 !important;
+  border-color:#a9aea0 !important;
 }
 .grid_3 p,.page-header p {
   color: #888;

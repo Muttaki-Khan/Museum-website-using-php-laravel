@@ -58,4 +58,5 @@
             {{ $imges->links() }}
         </div>
     </div>
+	
 @endsection

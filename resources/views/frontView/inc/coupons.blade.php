@@ -29,6 +29,5 @@
 </div>
 
 <script>
-	
 $( ".coupons" ).css( "background", "url(../public/{{$footimg}}) no-repeat center" );
 </script>

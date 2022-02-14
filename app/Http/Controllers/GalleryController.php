@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\item;
+use App\contacts;
 use Illuminate\Support\Facades\Route; 
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -16,7 +17,7 @@ class GalleryController extends Controller
     public function gallery(){
         // $img = item::all();
         $imges = DB::table('items')->orderBy('id')->Paginate(2);
-
+        $contacts = contacts::where('id',1)->first();
 
         if(Auth::user()==null){
             $user = User::where('id',1)->first();
@@ -30,7 +31,7 @@ class GalleryController extends Controller
             $categories = category::all();
             $footimg = $user->footimg;
             
-            return view('frontView.home.gallery', compact('imges','theme','logo','font','textcolor','categories','footimg',));
+            return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg',));
     
           }else{
     
@@ -43,7 +44,7 @@ class GalleryController extends Controller
             $textcolor = $user->textcolor;
             $categories = category::all();
             $footimg = $user->footimg;
-            return view('frontView.home.gallery', compact('img','theme','logo','font','textcolor','categories','footimg'));
+            return view('frontView.home.gallery', compact('imges','theme','logo','font','textcolor','categories','footimg'));
           }
         			 
     	// return view('frontView.home.gallery',['img'=>$img]);
