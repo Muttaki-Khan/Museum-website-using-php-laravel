@@ -44,7 +44,7 @@ class GalleryController extends Controller
             $textcolor = $user->textcolor;
             $categories = category::all();
             $footimg = $user->footimg;
-            return view('frontView.home.gallery', compact('imges','theme','logo','font','textcolor','categories','footimg'));
+            return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg'));
           }
         			 
     	// return view('frontView.home.gallery',['img'=>$img]);
