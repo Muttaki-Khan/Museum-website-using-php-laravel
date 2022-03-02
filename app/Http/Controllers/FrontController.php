@@ -14,20 +14,25 @@ use Illuminate\Support\Facades\Auth;
 use DB;
 Auth::routes();
 use Illuminate\Support\Facades\Route; 
+use Session;
 
 class FrontController extends Controller
 {
     public function index(){
+      $museum_id = session('museum_id', '1');
       $contacts = contacts::where('id',1)->first();
+      $is_admin = true;
+      if(Auth::user()==null) {
+        $is_admin=false;
+      } else if(User::where('id',Auth::id())->first()->role_id==2) {
+        $is_admin=false;
+      }
+      if($is_admin==false) {
+        $user = User::where('id',$museum_id)->first();
 
-      if(Auth::user()==null){
-        $user = User::where('id',1)->first();
         $latest = item::latest()->first();
-        $latest = $latest->pic;
-
-        // $latest = item::orderBy('id', 'desc')->skip(1)->take(1)->get();
-        // $latest = item::where('id','desc')->first();
-        // $latest = item::orderBy('created_at', 'desc')->skip(1)->take(1)->get();
+        $latest2 = DB::table('items')->orderBy('id', 'desc')->skip(1)->take(1)->get();
+        $latest3 = DB::table('items')->orderBy('id', 'desc')->skip(2)->take(1)->get();
       
         $theme = $user->theme;
         $logo = $user->logo;
@@ -39,14 +44,15 @@ class FrontController extends Controller
         $categories = category::all();
         $footimg = $user->footimg;
      
-        return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest'));
+        return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3'));
 
       }else{
 
         $user = User::where('id',Auth::id())->first();
-        // $user = User::where('id',1)->first();
         $latest = item::latest()->first();
-        $latest = $latest->pic;
+        $latest2 = DB::table('items')->orderBy('id', 'desc')->skip(1)->take(1)->get();
+        $latest3 = DB::table('items')->orderBy('id', 'desc')->skip(2)->take(1)->get();
+
         $theme = $user->theme;
         $logo = $user->logo;
         $font = $user->font;
@@ -56,25 +62,61 @@ class FrontController extends Controller
         $textcolor = $user->textcolor;
         $categories = category::all();
         $footimg = $user->footimg;
- //dd($latest);
-        return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest'));
+        return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3'));
       }
-      // $user = User::where('id',Auth::id())->first();
-      // $user = User::where('id',1)->first();
-      // $theme = $user->theme;
-      // $logo = $user->logo;
-      // $font = $user->font;
 
-      // return view('frontView.home.homeContent', compact('theme','logo','font'));
+    }
 
+    
+    public function chooseMuseum(Request $request){
+
+      Session::put('museum_id', $request->user_id);
+      $contacts = contacts::where('id',1)->first();
+
+      $items = DB::table('items')
+                  ->join('categories','categories.id','=','categoryId')
+                  ->select('items.*','categories.categoryName as catName')
+                  ->paginate(10);
+                  
+
+      $users = DB::table('users')->where('role_id', '1')->get();
+    
+                 if(Auth::user()==null){
+                  $user = User::where('id',session('museum_id'))->first();
+                  $theme = $user->theme;
+                  $logo = $user->logo;
+                  $font = $user->font;
+                  $textcolor = $user->textcolor;
+                  $categories = category::all();
+                  $footimg = $user->footimg;
+                  return view('frontView.home.museums', compact('items','users','contacts','theme','logo','font','textcolor','categories','footimg'));
+          
+                }else{
+          
+                  $user = User::where('id',session('museum_id'))->first();
+                  // $user = User::where('id',1)->first();
+                  $theme = $user->theme;
+                  $logo = $user->logo;
+                  $font = $user->font;
+                  $textcolor = $user->textcolor;
+                  $categories = category::all();
+                  $footimg = $user->footimg;
+                  return view('frontView.home.museums', compact('items','users','contacts','theme','logo','font','textcolor','categories','footimg'));
+                }
     }
     
     public function aboutIntro(){
+      $museum_id = session('museum_id', '1');
+      $aboutIntro = about::all();
       $contacts = contacts::where('id',1)->first();
-
-        $aboutIntro = about::all();
-        if(Auth::user()==null){
-          $user = User::where('id',1)->first();
+      $is_admin = true;
+      if(Auth::user()==null) {
+        $is_admin=false;
+      } else if(User::where('id',Auth::id())->first()->role_id==2) {
+        $is_admin=false;
+      }
+      if($is_admin==false) {
+        $user = User::where('id',$museum_id)->first();
 
           $theme = $user->theme;
           $logo = $user->logo;
@@ -82,7 +124,7 @@ class FrontController extends Controller
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.aboutIntro', compact('aboutIntro','theme','logo','font','textcolor','categories','footimg'));
+          return view('frontView.home.aboutIntro', compact('aboutIntro','theme','logo','font','textcolor','categories','footimg','contacts'));
   
         }else{
   
@@ -100,11 +142,19 @@ class FrontController extends Controller
     }
 
     public function aboutGoal(){
-      $contacts = contacts::where('id',1)->first();
 
         $aboutGoal = about::all();
-        if(Auth::user()==null){
-          $user = User::where('id',1)->first();
+        $museum_id = session('museum_id', '1');
+        $contacts = contacts::where('id',1)->first();
+        $is_admin = true;
+        if(Auth::user()==null) {
+          $is_admin=false;
+        } else if(User::where('id',Auth::id())->first()->role_id==2) {
+          $is_admin=false;
+        }
+        if($is_admin==false) {
+          $user = User::where('id',$museum_id)->first();
+
 
           $theme = $user->theme;
           $logo = $user->logo;
@@ -130,11 +180,18 @@ class FrontController extends Controller
     }
 
     public function exhibitionIntro(){
-      $contacts = contacts::where('id',1)->first();
 
         $exhibitionIntro = exhibition::all();
-        if(Auth::user()==null){
-          $user = User::where('id',1)->first();
+        $museum_id = session('museum_id', '1');
+        $contacts = contacts::where('id',1)->first();
+        $is_admin = true;
+        if(Auth::user()==null) {
+          $is_admin=false;
+        } else if(User::where('id',Auth::id())->first()->role_id==2) {
+          $is_admin=false;
+        }
+        if($is_admin==false) {
+          $user = User::where('id',$museum_id)->first();
   
           $theme = $user->theme;
           $logo = $user->logo;
@@ -164,10 +221,17 @@ class FrontController extends Controller
 
     public function contact(){
         $contact = contacts::all();
-        $contacts = contacts::where('id',1)->first();
 
-        if(Auth::user()==null){
-          $user = User::where('id',1)->first();
+        $museum_id = session('museum_id', '1');
+        $contacts = contacts::where('id',1)->first();
+        $is_admin = true;
+        if(Auth::user()==null) {
+          $is_admin=false;
+        } else if(User::where('id',Auth::id())->first()->role_id==2) {
+          $is_admin=false;
+        }
+        if($is_admin==false) {
+          $user = User::where('id',$museum_id)->first();
   
           $theme = $user->theme;
           $logo = $user->logo;
@@ -196,11 +260,18 @@ class FrontController extends Controller
     	// return view('frontView.home.contact',compact('contact'));
     }
     public function staff(){
-      $contacts = contacts::where('id',1)->first();
 
         $staff = staffs::all();
-        if(Auth::user()==null){
-          $user = User::where('id',1)->first();
+        $museum_id = session('museum_id', '1');
+        $contacts = contacts::where('id',1)->first();
+        $is_admin = true;
+        if(Auth::user()==null) {
+          $is_admin=false;
+        } else if(User::where('id',Auth::id())->first()->role_id==2) {
+          $is_admin=false;
+        }
+        if($is_admin==false) {
+          $user = User::where('id',$museum_id)->first();
   
           $theme = $user->theme;
           $logo = $user->logo;
@@ -225,16 +296,22 @@ class FrontController extends Controller
       // return view('frontView.home.staff',compact('staff'));
     }
     public function item(){
-      $contacts = contacts::where('id',1)->first();
 
       $items = DB::table('items')
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')
-                  ->paginate(100);
+                  ->paginate(10);
                  // ->where('categories')
-
-                 if(Auth::user()==null){
-                  $user = User::where('id',1)->first();
+                 $museum_id = session('museum_id', '1');
+                 $contacts = contacts::where('id',1)->first();
+                 $is_admin = true;
+                 if(Auth::user()==null) {
+                   $is_admin=false;
+                 } else if(User::where('id',Auth::id())->first()->role_id==2) {
+                   $is_admin=false;
+                 }
+                 if($is_admin==false) {
+                   $user = User::where('id',$museum_id)->first();
           
                   $theme = $user->theme;
                   $logo = $user->logo;
@@ -259,8 +336,52 @@ class FrontController extends Controller
       // return view('frontView.home.item',['items'=>$items]); 
     }
 
-    public function singleItem($id){
+    public function museums(){
+
+      $items = DB::table('items')
+                  ->join('categories','categories.id','=','categoryId')
+                  ->select('items.*','categories.categoryName as catName')
+                  ->paginate(10);
+                  
+
+      $users = DB::table('users')->where('role_id', '1')->get();
+    
+      $museum_id = session('museum_id', '1');
       $contacts = contacts::where('id',1)->first();
+      $is_admin = true;
+      if(Auth::user()==null) {
+        $is_admin=false;
+      } else if(User::where('id',Auth::id())->first()->role_id==2) {
+        $is_admin=false;
+      }
+      if($is_admin==false) {
+        $user = User::where('id',$museum_id)->first();
+                  $theme = $user->theme;
+                  $logo = $user->logo;
+                  $font = $user->font;
+                  $textcolor = $user->textcolor;
+                  $categories = category::all();
+                  $footimg = $user->footimg;
+                  return view('frontView.home.museums', compact('items','users','contacts','theme','logo','font','textcolor','categories','footimg'));
+          
+                }else{
+          
+                  $user = User::where('id',Auth::id())->first();
+                  // $user = User::where('id',1)->first();
+                  $theme = $user->theme;
+                  $logo = $user->logo;
+                  $font = $user->font;
+                  $textcolor = $user->textcolor;
+                  $categories = category::all();
+                  $footimg = $user->footimg;
+                  return view('frontView.home.museums', compact('items','users','contacts','theme','logo','font','textcolor','categories','footimg'));
+                }
+        //  return view('frontView.home.museums',['users'=>$users]); 
+
+    }
+
+
+    public function singleItem($id){
 
       $item = DB::table('items')
                   ->join('categories','categories.id','=','categoryId')
@@ -269,8 +390,16 @@ class FrontController extends Controller
                   ->first();
                  // ->where('categories')
       
-                 if(Auth::user()==null){
-                  $user = User::where('id',1)->first();
+                 $museum_id = session('museum_id', '1');
+                 $contacts = contacts::where('id',1)->first();
+                 $is_admin = true;
+                 if(Auth::user()==null) {
+                   $is_admin=false;
+                 } else if(User::where('id',Auth::id())->first()->role_id==2) {
+                   $is_admin=false;
+                 }
+                 if($is_admin==false) {
+                   $user = User::where('id',$museum_id)->first();
           
                   $theme = $user->theme;
                   $logo = $user->logo;

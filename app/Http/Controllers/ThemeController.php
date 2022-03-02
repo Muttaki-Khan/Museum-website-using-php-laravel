@@ -163,7 +163,19 @@ class ThemeController extends Controller
         $font = DB::table('users')->where('id', $user)->update(['font' => $request->font]);
         return redirect('/theme/font/edit/'.$user)->with('message','font changed successfully');
 
+    }
 
+    public function colablink(){
+
+        $user = Auth::id();
+        return view('admin.theme.colabLinkEdit',compact('user'));
+    }
+    public function savecolablink(Request $request)
+    {
+        
+        $user = Auth::id();
+        $colablink = DB::table('users')->where('id', $user)->update(['colablink' => $request->colablink]);
+        return redirect('/theme/colablink/edit/'.$user)->with('message','colab link changed successfully');
 
     }
 

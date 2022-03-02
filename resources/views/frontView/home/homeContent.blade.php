@@ -88,27 +88,37 @@
 	<div class="container">
 		<h3 class="{{$font}}"><span>new </span>collections</h3>
 		<div class="new_grids">
+		
+
 			<div class="col-md-4 new-gd-left">
-				<img src="{{$latest}}" alt="" height='220px' />
+				<img src="{{$latest->pic}}" alt="" height='220px' />
 				<div class="wed-brand simpleCart_shelfItem">
 					<!-- <h4>Latest Collections</h4> -->
 					
 				</div>
 			</div>
+		
+		@foreach($latest2 as $last)
 			<div class="col-md-4 new-gd-middle">
-				<img src="{{ asset('frontEnd') }}/images/UM.55.244.jpg" alt="soft-men21"  height='220px' />
+				<img src="{{$last->pic}}" alt="soft-men21"  height='220px' />
 				<div class="wed-brandtwo simpleCart_shelfItem">
 					
 				</div>
-				
+		
 			</div>
+		@endforeach
+		@foreach($latest3 as $last)
+
 			<div class="col-md-4 new-gd-left">
-				<img src="{{ asset('frontEnd') }}/images/UM.57.11.jpg" alt="soft-men21"  height='220px'/>
+				<img src="{{$last->pic}}" alt="soft-men21"  height='220px'/>
 				<div class="wed-brandtwo simpleCart_shelfItem">
 					<!-- <h4>Local Collection</h4> -->
 					
 				</div>
 			</div>
+		@endforeach
+
+
 			<div class="clearfix"></div>
 		</div>
 	</div>

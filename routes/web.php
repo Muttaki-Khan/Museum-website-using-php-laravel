@@ -54,6 +54,7 @@ Route::group(['middleware' => ['web', 'auth']], function(){
     });
 });
 
+Route::post('/museums', 'FrontController@chooseMuseum')->name('museums');
 
 //Route::get('/home', 'HomeController@index');
 
@@ -86,6 +87,9 @@ Route::get('/contact', 'FrontController@contact');
 Route::get('/gallery', 'GalleryController@gallery');
 //============= Home.Exhibition =============
 Route::get('/exhibition', 'FrontController@exhibitionIntro');
+
+//============= Home.Museums =============
+Route::get('/museums', 'FrontController@museums');
 
 
 
@@ -160,6 +164,8 @@ Route::get('/msg/kill/{id}',[
 	Route::post('/theme/footimage/edit','ThemeController@savefootimage');
 	Route::get('/theme/mapimage/edit/{id}','ThemeController@mapimage');
 	Route::post('/theme/mapimage/edit','ThemeController@savemapimage');
+	Route::get('/theme/colablink/edit/{id}','ThemeController@colablink');
+	Route::post('/theme/colablink/edit','ThemeController@savecolablink');
 
 
 

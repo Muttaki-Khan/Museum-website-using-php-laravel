@@ -4,7 +4,7 @@
 @extends('frontView.master')
 
 @section('title_area')
-        Item
+        Museums
 @endsection
 
 
@@ -39,31 +39,29 @@
     $i=0;
      ?>
     <div class="panel-body">
-        <h1>Item</h1>
+        <h1>Museums</h1>
         
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>SI.</th>
-                                        <th>Item Name</th>
-                                        <th>Category Name</th>
-                                        <th>Code</th>
-                                        <th>Picture</th>
-                                        <!-- <th>Information</th> -->
+                                        <th>Admin</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($items as $item)
+                                    @foreach($users as $user)
                                     <tr>
                                         <td>{{++$i}}</td>
-                                        <td>{{$item->itemName}}</td>
-                                        <td>{{$item->catName}}</td>
-                                        <td>{{$item->itemCode}}</td>
-                                        <td><img src="{{$item->pic}}" width="180"alt-"no pic"></td>
-                                        
-                                        <!-- <td>{{$item->information}}</td> -->
-                                        <td><a href="{{url('/'.$item->id)}}">View</a> </td>
+                                        <td>{{$user->name}}</td>
+                                        <td>
+                                        <form action="{{ route('museums') }}"  method="post">
+                                            @csrf
+                                        <input type="hidden", name="user_id", value="{{$user->id}}">
+                                        <input type="hidden", name="role_id", value="{{$user->role_id}}">
+                                        <input type="submit" class="button {{$theme}} {{$font}} {{$textcolor}}" value="Select"  />
+                                        </form> 
+                                        </td>
 
                                         
                                     </tr>

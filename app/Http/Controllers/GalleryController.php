@@ -17,10 +17,16 @@ class GalleryController extends Controller
     public function gallery(){
         // $img = item::all();
         $imges = DB::table('items')->orderBy('id')->Paginate(2);
+        $museum_id = session('museum_id', '1');
         $contacts = contacts::where('id',1)->first();
-
-        if(Auth::user()==null){
-            $user = User::where('id',1)->first();
+        $is_admin = true;
+        if(Auth::user()==null) {
+          $is_admin=false;
+        } else if(User::where('id',Auth::id())->first()->role_id==2) {
+          $is_admin=false;
+        }
+        if($is_admin==false) {
+          $user = User::where('id',$museum_id)->first();
             $latest = item::latest()->first();
             $latest = $latest->pic;
 

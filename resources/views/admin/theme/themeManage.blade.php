@@ -44,6 +44,10 @@
 
                                     <tr>
                                     <a href="{{url('/theme/mapimage/edit/'.$user)}}" class="button" style="color:white;">Change Map Image</a>
+                                    </tr><br>
+
+                                    <tr>
+                                    <a href="{{url('theme/colablink/edit/'.$user)}}" class="button" style="color:white;">Google Colab</a>
                                     </tr>
 
                                 </thead>

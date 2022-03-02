@@ -69,6 +69,8 @@
 					<li class=" menu__item"><a class="menu__link {{$textcolor}}" href="{{url('/gallery')}}">Gallery</a></li>
 					<li class=" menu__item"><a class="menu__link {{$textcolor}}" href="{{url('/exhibition')}}">Events</a></li>
 					<li class=" menu__item"><a class="menu__link {{$textcolor}}" href="{{url('/contact')}}">contact</a></li>
+					<li class=" menu__item"><a class="menu__link {{$textcolor}}" href="{{url('/museums')}}">Museums</a></li>
+
 				  </ul>
 				</div>
 			  </div>
