@@ -1,5 +1,9 @@
 <?php
 use App\User;
+use App\item;
+use App\category;
+use App\contacts;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,14 +35,8 @@ Route::group(['middleware' => ['web', 'auth']], function(){
     Route::get('/home', function(){
         if(Auth::user()->role_id ==1 ){
 			$user = User::where('id',Auth::id())->first();
-			$theme = $user->theme;
-			$logo = $user->logo;
-			$font = $user->font;
-			$img1 = $user->img1;
-			$img2 = $user->img2;
-       	 	$img3 = $user->img3;
        
-            return view('admin.home.homeContent')->with('theme', $theme, 'logo',$logo ,'font',$font,'img1',$img1,'img2',$img2,'img3',$img3);
+            return view('admin.home.homeContent', compact('user'));
         
         } else{
 			$user = User::where('id',1)->first();
@@ -48,15 +46,22 @@ Route::group(['middleware' => ['web', 'auth']], function(){
 			$img1 = $user->img1;
 			$img2 = $user->img2;
         	$img3 = $user->img3;
-        	$textcolor = $user->$textcolor;
-            return view('frontView.home.homeContent', compact('theme','logo','font','img1','img2','img3','textcolor'));
+        	$textcolor = $user->textcolor;
+			$latest = item::latest()->first();
+			$latest2 = DB::table('items')->orderBy('id', 'desc')->skip(1)->take(1)->get();
+			$latest3 = DB::table('items')->orderBy('id', 'desc')->skip(2)->take(1)->get();
+			$categories = category::all();
+			$footimg = $user->footimg;
+			$contacts = contacts::where('id',1)->first();
+
+            return view('frontView.home.homeContent', compact('contacts','theme','logo','font','img1','img2','img3','textcolor','latest','latest2','latest3','categories','footimg'));
         }
     });
 });
 
 Route::post('/museums', 'FrontController@chooseMuseum')->name('museums');
 
-//Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
 
 
 Route::get('/','FrontController@index');

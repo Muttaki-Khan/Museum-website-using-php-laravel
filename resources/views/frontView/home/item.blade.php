@@ -39,18 +39,18 @@
     $i=0;
      ?>
     <div class="panel-body">
-        <h1>Item</h1>
+        <h1 class="{{$font}}">Item</h1>
         
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>SI.</th>
-                                        <th>Item Name</th>
-                                        <th>Category Name</th>
-                                        <th>Code</th>
-                                        <th>Picture</th>
+                                        <th class="{{$font}}">SI.</th>
+                                        <th class="{{$font}}">Item Name</th>
+                                        <th class="{{$font}}">Category Name</th>
+                                        <th class="{{$font}}">Code</th>
+                                        <th class="{{$font}}">Picture</th>
                                         <!-- <th>Information</th> -->
-                                        <th>Action</th>
+                                        <th class="{{$font}}">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

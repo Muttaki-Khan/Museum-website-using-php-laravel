@@ -39,7 +39,7 @@
     $i=0;
      ?>
     <div class="panel-body">
-        <h1>Museums</h1>
+        <h1 class="{{$font}}">Museums List</h1>
         
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
