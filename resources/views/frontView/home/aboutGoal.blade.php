@@ -36,15 +36,6 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        
-                                        <th>Goals</th>
-                                        
-                                       
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
                                     @foreach($aboutGoal as $singleAbout)
                                     <tr class="odd gradeX">
                                         
@@ -54,7 +45,9 @@
                                         
                                     </tr>
                                     @endforeach
-                                </tbody>
+                                    </tr>
+                                </thead>
+                                
 
                                
                             </table>

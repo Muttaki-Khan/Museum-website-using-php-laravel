@@ -43,7 +43,7 @@
           <div class='input-group'>
             <input class='form-control' type='search' name='search' placeholder='Search Name' />
             <span class="input-group-btn">
-              <button type='submit' class='btn btn-default {{$theme}}'>
+              <button type='submit' class='btn btn-default {{$textcolor}} {{$theme}}'>
                 <span class='glyphicon glyphicon-search' style=""></span>
               </button>
             </span>

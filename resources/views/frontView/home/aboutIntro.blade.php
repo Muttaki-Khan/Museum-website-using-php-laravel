@@ -36,14 +36,6 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <h3><th>Introduction</th></h3>
-                                        
-                                       
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
                                     @foreach($aboutIntro as $singleAbout)
                                     <tr class="odd gradeX">
                                         <td><h4>{{$singleAbout->introduction}}</h4> </td>
@@ -52,7 +44,11 @@
                                         
                                     </tr>
                                     @endforeach
-                                </tbody>
+
+                                        
+                                    </tr>
+                                </thead>
+                               
 
                                
                             </table>
