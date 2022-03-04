@@ -49,19 +49,13 @@ class StaffController extends Controller
 
       return redirect('/staff/entry')->with('message','staff insert successfully');
 
-
-
-
   }
 
   public function manage(){
 
-      
+    $staffs = DB::table('staffs')->where('user_id', Auth::id())->get();
 
-      $staffs = staffs::all();
       return view('admin.staff.staffManage',['staff'=>$staffs]);
-
-
       
   }
 
@@ -91,10 +85,7 @@ class StaffController extends Controller
 
     // $staff= staff::find($request->staff_id);
      $staffPic= staffs::where('id',$request->staff_id)->first();
-    
-
-    
-     
+  
 
      if ($picInfo=$request->file('pic')) {
         if (file_exists($staffPic->pic)) {

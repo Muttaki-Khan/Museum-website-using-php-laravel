@@ -61,13 +61,14 @@
 		</div> -->
 
 		<div class="col-sm-3 newsright">
-				<!-- <a type="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="">Colab Playground</a> -->
+				<!-- <a type="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="">Machine Learning Feature</a> -->
 				<?php
 				if (Auth::user() && strlen(Auth::user()->colablink)>5){
 				?>
-    			<a typ="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="{{ Auth::user()->colablink }} ">Colab Playground</a>
+    			<a typ="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="{{ Auth::user()->colablink }} ">Machine Learning Feature</a>
 
 				<?php
+				
 				}
 				?>
 
