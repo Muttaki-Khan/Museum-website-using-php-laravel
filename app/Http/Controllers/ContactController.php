@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route; 
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use DB;
 
 class ContactController extends Controller
 {
@@ -18,7 +19,8 @@ class ContactController extends Controller
     }
     public function index()
     {
-        $contact = contacts::all();
+        $contact = DB::table('contacts')->where('user_id', Auth::id())->get();
+
         $msgbar = Messages::orderBy('id','desc')->get()->take(3);
 
         if($contact->count()==0){
@@ -32,6 +34,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
     	$contact = new contacts;
+        $contact->user_id = Auth::id();
 
     	$contact->address = $request->address;
     	$contact->contact1 = $request->phn1;

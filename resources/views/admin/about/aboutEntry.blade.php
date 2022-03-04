@@ -22,17 +22,21 @@
                                             <textarea class="form-control" name="introduction" placeholder="Enter description"> </textarea>
                                         </div>
                                          <div class="form-group">
-                                            <label>goals</label>
+                                            <label>Goals</label>
                                             <textarea class="form-control" name="goals" placeholder="Enter description"> </textarea>
                                         </div>
-                                        
-
-                                        </div>
                                         <div class="form-group">
-                                        	<input type="submit" class="btn btn-block btn-primary">
+                                        <input type="hidden"  name="user_id">
+                                        </div>
+
+                                        
+                                        <div class="form-group">
+                                        <input type="submit" class="btn btn-block btn-primary">
                                         </div>	
                                     {!! Form::close() !!}
                                 </div>
                             </div>
 
+                            
+                        
 @endsection

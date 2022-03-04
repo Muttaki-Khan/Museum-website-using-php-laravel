@@ -41,6 +41,9 @@
                                         
                                         </div>
 
+                                        <div class="form-group">
+                                        <input type="hidden"  name="user_id">
+                                        </div>
 
 
                                         <div class="form-group">

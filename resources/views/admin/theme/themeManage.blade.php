@@ -18,36 +18,36 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                    <a href="{{url('/theme/color/edit/'.$user)}}" class="button" style="color:white;"> Change Theme Color</a>
+                                    <a href="{{url('/theme/color/edit/'.$user)}}" class="button" style="color:white; width:25%"> Change Theme Color</a>
                                     </tr><br>
 
                                     <tr>
-                                    <a href="{{url('/theme/logo/edit/'.$user)}}" class="button" style="color:white;">Change Logo</a>
+                                    <a href="{{url('/theme/logo/edit/'.$user)}}" class="button" style="color:white; width:25%">Change Logo</a>
                                     </tr><br>
 
                                     <tr>
-                                    <a href="{{url('/theme/font/edit/'.$user)}}" class="button" style="color:white;">Change Font</a>
+                                    <a href="{{url('/theme/font/edit/'.$user)}}" class="button" style="color:white; width:25%">Change Font</a>
                                     </tr>
 
 
                                     <tr>
-                                    <a href="{{url('/theme/textcolor/edit/'.$user)}}" class="button" style="color:white;">Change Font Color</a>
+                                    <a href="{{url('/theme/textcolor/edit/'.$user)}}" class="button" style="color:white; width:25%">Change Font Color</a>
                                     </tr><br>
 
                                     <tr>
-                                    <a href="{{url('/theme/image/edit/'.$user)}}" class="button" style="color:white;">Home Page Image</a>
+                                    <a href="{{url('/theme/image/edit/'.$user)}}" class="button" style="color:white; width:25%">Home Page Image</a>
                                     </tr>
 
                                     <tr>
-                                    <a href="{{url('/theme/footimage/edit/'.$user)}}" class="button" style="color:white;">Footer Banner Image</a>
+                                    <a href="{{url('/theme/footimage/edit/'.$user)}}" class="button" style="color:white; width:25%">Footer Banner Image</a>
                                     </tr>
 
                                     <tr>
-                                    <a href="{{url('/theme/mapimage/edit/'.$user)}}" class="button" style="color:white;">Change Map Image</a>
+                                    <a href="{{url('/theme/mapimage/edit/'.$user)}}" class="button" style="color:white; width:25%">Change Map Image</a>
                                     </tr><br>
 
                                     <tr>
-                                    <a href="{{url('theme/colablink/edit/'.$user)}}" class="button" style="color:white;">Google Colab</a>
+                                    <a href="{{url('theme/colablink/edit/'.$user)}}" class="button" style="color:white; width:25%">Google Colab</a>
                                     </tr>
 
                                 </thead>

@@ -21,10 +21,10 @@
                                             <label>Announcement</label>
                                             <textarea class="form-control" name="introduction" placeholder="Enter description"> </textarea>
                                         </div>
-                                         
-                                        
-
+                                        <div class="form-group">
+                                        <input type="hidden"  name="user_id">
                                         </div>
+          
                                         <div class="form-group">
                                         	<input type="submit" class="btn btn-block btn-primary">
                                         </div>	

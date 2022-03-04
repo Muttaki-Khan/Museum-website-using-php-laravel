@@ -2,6 +2,7 @@
 .button {
   display: inline-block;
   padding: 5px 10px;
+  margin-top: 5px;
   font-size: 14px;
   cursor: pointer;
   text-align: center;
@@ -53,10 +54,24 @@
 		
     </div>
 
-		<div class="col-sm-3 newsright ">
+		<!-- <div class="col-sm-3 newsright ">
 				<form action="http://127.0.0.1:8000">
     			<input type="submit" class="button {{$theme}} {{$font}} {{$textcolor}}" value="search image"  />
                 </form>
+		</div> -->
+
+		<div class="col-sm-3 newsright">
+				<!-- <a type="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="">Colab Playground</a> -->
+				<?php
+				if (Auth::user() && strlen(Auth::user()->colablink)>5){
+				?>
+    			<a typ="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="{{ Auth::user()->colablink }} ">Colab Playground</a>
+
+				<?php
+				}
+				?>
+
+
 		</div>
 
 
@@ -67,12 +82,13 @@
 
 @if (Auth::guest())  
    
-    <li><a href="login" class="use1"  ><span>Login</span></a></li>
+    <li><a href="login" class="use1 {{$theme}} {{$font}} {{$textcolor}}"  ><span>Login</span></a></li>
 		
 @else
+				<i class="{{$font}}">{{ Auth::user()->name }} </i> 
 
-				<li><a href="{{ route('logout') }}"onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">Logout</a>
+				<li><a class="use1" href="{{ route('logout') }}"onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();"><span>Logout</span></a>
                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

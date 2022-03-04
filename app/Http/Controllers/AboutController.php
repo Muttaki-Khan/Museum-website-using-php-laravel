@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\about;
 use DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class AboutController extends Controller
 {
@@ -24,6 +26,8 @@ class AboutController extends Controller
 
         $about->introduction = $request->introduction;
         $about->goals = $request->goals;
+        $about->user_id = Auth::id();
+
        
   
 
@@ -36,7 +40,8 @@ class AboutController extends Controller
     }
   public function manage(){
 
-      $abouts = about::all();
+      $abouts = DB::table('abouts')->where('user_id', Auth::id())->get();
+
       return view('admin.about.aboutManage',['about'=>$abouts]);
   }
 

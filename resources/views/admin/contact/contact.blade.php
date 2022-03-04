@@ -39,6 +39,7 @@
 						<label for="inputEmail">Email 2:</label>
 						<input type="email" class="form-control" name="email2" required>
 				</div>
+				
 				<div class="form-group">
 				  <label for="comment">Address:</label>
 					<textarea class="form-control" rows="5" name="address"></textarea>

@@ -30,7 +30,7 @@ class MainHomeController extends Controller
         }
         if($is_admin==false) {
           $user = User::where('id',$museum_id)->first();
-		$theme = $user->theme;
+		    $theme = $user->theme;
         $logo = $user->logo;
         $font = $user->font;
         $img1 = $user->img1;

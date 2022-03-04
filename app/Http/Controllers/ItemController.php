@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\category;
 use App\item;
 use DB;
+use Illuminate\Support\Facades\Auth;
+
 class ItemController extends Controller
 {
     public function index(){
@@ -22,6 +24,7 @@ class ItemController extends Controller
   		$item->categoryId = $request->categoryId;
   		$item->itemCode = $request->code;
   		$item->pic = 'Picture';
+      $item->user_id = Auth::id();
   		$item->information = $request->information;
 
   		$item->save();
@@ -46,8 +49,6 @@ class ItemController extends Controller
       return redirect('/item/entry')->with('message','Item insert successfully');
 
 
-
-
   }
 
   public function manage(){
@@ -55,6 +56,7 @@ class ItemController extends Controller
       $items = DB::table('items')
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')
+                  ->where('user_id',Auth::id())
                   ->paginate(3);
                  // ->where('categories')
       
@@ -90,10 +92,6 @@ class ItemController extends Controller
 
     // $item= item::find($request->item_id);
      $itemPic= item::where('id',$request->item_id)->first();
-    
-
-    
-     
 
      if ($picInfo=$request->file('pic')) {
         if (file_exists($itemPic->pic)) {

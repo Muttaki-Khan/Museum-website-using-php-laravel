@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\exhibition;
 use DB;
@@ -19,9 +20,8 @@ public function save(Request $request){
 
 
         $exhibition->introduction = $request->introduction;
-        
-       
-  
+        $exhibition->user_id = Auth::id();
+
 
         $exhibition->save();
 
@@ -32,7 +32,8 @@ public function save(Request $request){
     }
   public function manage(){
 
-      $exhibitions = exhibition::all();
+      $exhibitions = DB::table('exhibitions')->where('user_id', Auth::id())->get();
+
       return view('admin.exhibition.exManage',['exhibition'=>$exhibitions]);
   }
 
