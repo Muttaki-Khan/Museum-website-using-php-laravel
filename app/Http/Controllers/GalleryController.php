@@ -16,7 +16,7 @@ class GalleryController extends Controller
 
     public function gallery(){
         // $img = item::all();
-        $imges = DB::table('items')->orderBy('id')->Paginate(2);
+        // $imges = DB::table('items')->orderBy('id')->Paginate(2);
         $museum_id = session('museum_id', '1');
         $contacts = contacts::where('id',1)->first();
         $is_admin = true;
@@ -29,6 +29,8 @@ class GalleryController extends Controller
           $user = User::where('id',$museum_id)->first();
             $latest = item::latest()->first();
             $latest = $latest->pic;
+            $imges = DB::table('items')->where('user_id',$museum_id)->Paginate(6);
+
 
             $theme = $user->theme;
             $logo = $user->logo;

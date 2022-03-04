@@ -33,6 +33,10 @@
                                             <input type="file" class="form-control" name="pic">
                                         
                                         </div>
+                                        <div class="form-group">
+                                        <input type="hidden"  name="user_id">
+                                        </div>
+
 
 
 

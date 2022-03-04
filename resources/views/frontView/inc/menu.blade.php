@@ -24,11 +24,11 @@
 									<!-- <div class="col-sm-6 multi-gd-img1 multi-gd-text ">
 										<a href="mens.html"><img src="{{ asset('frontEnd') }}/images/m1.jpg" alt=" "/></a>
 									</div> -->
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
+									<div class="col-sm-3 multi-gd-img" style="width:100%">
+										<ul class="multi-column-dropdown" >
 											<li><a href="introduction">Introduction</a></li>
 											<li><a href="goals">Goals</a></li>
-											<li><a href="staff">Staff</a></li>
+											<li><a href="staff">Staff Directory</a></li>
 											<li><a href="contact">Contact</a></li>
 											
 											

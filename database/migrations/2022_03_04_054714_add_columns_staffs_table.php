@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnsExhibitionsTable extends Migration
+class AddColumnsStaffsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddColumnsExhibitionsTable extends Migration
      */
     public function up()
     {
-        Schema::table('exhibitions', function (Blueprint $table) {
+        Schema::table('staffs', function (Blueprint $table) {
             //
             $table->unsignedBigInteger('user_id')->after('id');
 
@@ -27,9 +27,9 @@ class AddColumnsExhibitionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('exhibitions', function (Blueprint $table) {
+        Schema::table('staffs', function (Blueprint $table) {
             //
-            Schema::dropIfExists('exhibitions');
+            Schema::dropIfExists('staffs');
 
         });
     }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\staffs;
+use Illuminate\Support\Facades\Auth;
+
 use DB;
 
 class StaffController extends Controller
@@ -24,6 +26,7 @@ class StaffController extends Controller
   		$staff->staffRank = $request->rank;
   		$staff->pic = 'Picture';
   		$staff->Email = $request->email;
+      $staff->user_id = Auth::id();
 
   		$staff->save();
 

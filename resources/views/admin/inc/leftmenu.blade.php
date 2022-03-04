@@ -35,7 +35,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Staff Control<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Staff Directory Control<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ url('/staff/entry')}}">Staff Entry</a>
@@ -73,7 +73,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                          <li>
-                            <a href="#"><i class="glyphicon glyphicon-erase"></i>Contact Info <span class="fa arrow"></span></a>
+                            <a href="#"><i class="glyphicon glyphicon-erase"></i>Contact Us Control <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                                                
                                 <li>
@@ -84,7 +84,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="glyphicon glyphicon-erase"></i> About <span class="fa arrow"></span></a>
+                            <a href="#"><i class="glyphicon glyphicon-erase"></i> About Us Control <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ url('/about/entry')}}">About Entry</a>

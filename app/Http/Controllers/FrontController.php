@@ -107,7 +107,6 @@ class FrontController extends Controller
     
     public function aboutIntro(){
       $museum_id = session('museum_id', '1');
-      $aboutIntro = about::all();
       $contacts = contacts::where('id',1)->first();
       $is_admin = true;
       if(Auth::user()==null) {
@@ -117,6 +116,7 @@ class FrontController extends Controller
       }
       if($is_admin==false) {
         $user = User::where('id',$museum_id)->first();
+        $aboutIntro = DB::table('abouts')->where('user_id', $museum_id)->get();
 
           $theme = $user->theme;
           $logo = $user->logo;
@@ -130,6 +130,8 @@ class FrontController extends Controller
   
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
+          $aboutIntro = DB::table('abouts')->where('user_id', Auth::id())->get();
+
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -155,6 +157,7 @@ class FrontController extends Controller
         if($is_admin==false) {
           $user = User::where('id',$museum_id)->first();
 
+          $aboutGoal = DB::table('abouts')->where('user_id', $museum_id)->get();
 
           $theme = $user->theme;
           $logo = $user->logo;
@@ -168,6 +171,8 @@ class FrontController extends Controller
   
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
+          $aboutGoal = DB::table('abouts')->where('user_id', Auth::id())->get();
+
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -181,7 +186,6 @@ class FrontController extends Controller
 
     public function exhibitionIntro(){
 
-        $exhibitionIntro = exhibition::all();
         $museum_id = session('museum_id', '1');
         $contacts = contacts::where('id',1)->first();
         $is_admin = true;
@@ -192,6 +196,7 @@ class FrontController extends Controller
         }
         if($is_admin==false) {
           $user = User::where('id',$museum_id)->first();
+          $exhibitionIntro  = DB::table('exhibitions')->where('user_id', $museum_id)->get();
   
           $theme = $user->theme;
           $logo = $user->logo;
@@ -205,6 +210,8 @@ class FrontController extends Controller
   
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
+          $exhibitionIntro  = DB::table('exhibitions')->where('user_id', Auth::id())->get();
+
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -220,7 +227,6 @@ class FrontController extends Controller
 
 
     public function contact(){
-        $contact = contacts::all();
 
         $museum_id = session('museum_id', '1');
         $contacts = contacts::where('id',1)->first();
@@ -232,6 +238,7 @@ class FrontController extends Controller
         }
         if($is_admin==false) {
           $user = User::where('id',$museum_id)->first();
+          $contact  = DB::table('contacts')->where('user_id', $museum_id)->get();
   
           $theme = $user->theme;
           $logo = $user->logo;
@@ -246,6 +253,8 @@ class FrontController extends Controller
   
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
+          $contact  = DB::table('contacts')->where('user_id', Auth::id())->get();
+
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -261,7 +270,6 @@ class FrontController extends Controller
     }
     public function staff(){
 
-        $staff = staffs::all();
         $museum_id = session('museum_id', '1');
         $contacts = contacts::where('id',1)->first();
         $is_admin = true;
@@ -272,6 +280,7 @@ class FrontController extends Controller
         }
         if($is_admin==false) {
           $user = User::where('id',$museum_id)->first();
+          $staff = DB::table('staffs')->where('user_id', $museum_id)->get();
   
           $theme = $user->theme;
           $logo = $user->logo;
@@ -285,6 +294,8 @@ class FrontController extends Controller
   
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
+          $staff = DB::table('staffs')->where('user_id', Auth::id())->get();
+
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -297,21 +308,23 @@ class FrontController extends Controller
     }
     public function item(){
 
-      $items = DB::table('items')
-                  ->join('categories','categories.id','=','categoryId')
-                  ->select('items.*','categories.categoryName as catName')
-                  ->paginate(10);
-                 // ->where('categories')
-                 $museum_id = session('museum_id', '1');
-                 $contacts = contacts::where('id',1)->first();
-                 $is_admin = true;
+     $museum_id = session('museum_id', '1');
+     $contacts = contacts::where('id',1)->first();
+     $is_admin = true;
                  if(Auth::user()==null) {
                    $is_admin=false;
+
                  } else if(User::where('id',Auth::id())->first()->role_id==2) {
                    $is_admin=false;
                  }
                  if($is_admin==false) {
-                   $user = User::where('id',$museum_id)->first();
+                  $user = User::where('id',$museum_id)->first();
+
+                  $items = DB::table('items')
+                  ->join('categories','categories.id','=','categoryId')
+                  ->select('items.*','categories.categoryName as catName')
+                  ->where('user_id', $museum_id)
+                  ->paginate(10);
           
                   $theme = $user->theme;
                   $logo = $user->logo;
@@ -325,6 +338,13 @@ class FrontController extends Controller
           
                   $user = User::where('id',Auth::id())->first();
                   // $user = User::where('id',1)->first();
+
+                  $items = DB::table('items')
+                  ->join('categories','categories.id','=','categoryId')
+                  ->select('items.*','categories.categoryName as catName')
+                  ->where('user_id', Auth::id())
+                  ->paginate(10);
+
                   $theme = $user->theme;
                   $logo = $user->logo;
                   $font = $user->font;

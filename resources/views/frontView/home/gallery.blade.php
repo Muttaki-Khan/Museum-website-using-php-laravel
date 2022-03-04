@@ -31,7 +31,7 @@
 @endsection
 
 @section('feature')
-      <font face = "Times New Roman" class="{{$font}}" size = "2" style="font-size:2vw;">Gallery</font><br />
+      <font face = "Times New Roman" class="{{$font}}" size = "2" style="font-size:2vw;">Gallery</font><br><br>
 <section class="gallery-area">
 		<div class="container">
 			<div class="row align-items-center">
@@ -58,5 +58,5 @@
             {{ $imges->links() }}
         </div>
     </div>
-	
+	<br><br><br><br><br><br>
 @endsection
