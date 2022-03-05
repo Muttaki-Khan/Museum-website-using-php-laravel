@@ -77,7 +77,7 @@
                             <ul class="nav nav-second-level">
                                                                
                                 <li>
-                                    <a href="info2">Contact</a>
+                                    <a href="{{ url('/info2')}}">Contact</a>
                                 </li>
                                 
                             </ul>

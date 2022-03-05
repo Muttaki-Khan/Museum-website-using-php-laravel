@@ -90,13 +90,16 @@
 		<div class="new_grids">
 		
 
+		@foreach($latest as $last)
+
 			<div class="col-md-4 new-gd-left">
-				<img src="{{$latest->pic}}" alt="" height='220px' />
+			<img src="{{$last->pic}}" alt="soft-men21" height='220px' />
+
 				<div class="wed-brand simpleCart_shelfItem">
-					<!-- <h4>Latest Collections</h4> -->
-					
 				</div>
 			</div>
+		@endforeach
+
 		
 		@foreach($latest2 as $last)
 			<div class="col-md-4 new-gd-middle">

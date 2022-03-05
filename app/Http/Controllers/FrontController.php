@@ -30,7 +30,7 @@ class FrontController extends Controller
       if($is_admin==false) {
         $user = User::where('id',$museum_id)->first();
 
-        $latest = item::latest()->where('user_id',$museum_id)->first();
+        $latest = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(0)->take(1)->get();
         $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
         $latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(2)->take(1)->get();
       
@@ -49,7 +49,8 @@ class FrontController extends Controller
       }else{
 
         $user = User::where('id',Auth::id())->first();
-        $latest = item::latest()->where('user_id',$museum_id)->first();
+        // $latest =  item::latest()->where('user_id',$museum_id)->first();
+        $latest = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(0)->take(1)->get();
         $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
         $latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(2)->take(1)->get();
 
