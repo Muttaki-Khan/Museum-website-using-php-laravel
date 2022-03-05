@@ -253,24 +253,58 @@ label{
 /*-- banner-color --*/
 
 .green-theme{
-	background:#07bb1f;
+	background:#3cb44b;
 }
 
 .red-theme{
 	background:#e40d0d;
 }
 .blue-theme{
-	background:#0f0d86;
+	background:#4363d8;
 }
+.navy-theme{
+	background:#000075;
+}
+
 .orange-theme{
-	background:#f3dd32;
+	background:#f58231	;
 }
 
 .purple-theme{
-	background:#710de4;
+	background:#911eb4;
 }
 .white-theme{
 	background:#ffffff;
+}
+
+.maroon-theme{
+	background:#800000;
+}
+
+.brown-theme{
+	background:#9A6324	;
+}
+.olive-theme{
+	background:#808000;
+}
+.pink-theme{
+	background:#fabed4;
+}
+
+.lime-theme{
+	background:#bfef45;
+}
+.magenta-theme{
+	background:#f032e6;
+}
+.yellow-theme{
+	background:#ffe119;
+}
+.mint-theme{
+	background:#aaffc3;
+}
+.cyan-theme{
+	background:#42d4f4;
 }
 
 

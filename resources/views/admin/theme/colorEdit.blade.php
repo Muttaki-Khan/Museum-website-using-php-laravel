@@ -26,6 +26,16 @@
                                 <option value="orange-theme">Orange</option>
                                 <option value="purple-theme">Purple</option>
                                 <option value="white-theme">White</option>
+                                <option value="navy-theme">Navy Blue</option>
+                                <option value="maroon-theme">Maroon</option>
+                                <option value="brown-theme">Brown</option>
+                                <option value="olive-theme">Olive</option>
+                                <option value="pink-theme">Pink</option>
+                                <option value="lime-theme">Lime</option>
+                                <option value="magenta-theme">Magenta</option>
+                                <option value="yellow-theme">Yellow</option>
+                                <option value="cyan-theme">Cyan</option>
+                                <option value="mint-theme">Mint</option>
 
                                 <div class="form-group">
 

@@ -20,9 +20,21 @@ class SearchController extends Controller
    public function searchitem(Request $request){
         $query = $request->get('search');
         $contacts = contacts::where('id',1)->first();
-        
+        $museum_id = session('museum_id', '1');
 
-         $items = DB::table('items')         
+
+                  $is_admin = true;
+                  if(Auth::user()==null) {
+                    $is_admin=false;
+ 
+                  } else if(User::where('id',Auth::id())->first()->role_id==2) {
+                    $is_admin=false;
+                  }
+                  if($is_admin==false) {
+                   $user = User::where('id',$museum_id)->first();
+
+                   
+                  $items = DB::table('items')         
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')       
                   ->Where('itemName', 'like', '%'.$query.'%')
@@ -32,8 +44,7 @@ class SearchController extends Controller
                   ->orWhere('information', 'like', '%'.$query.'%')
                   ->get();
 
-                  if(Auth::user()==null){
-                    $user = User::where('id',1)->first();
+
                     $textcolor = $user->textcolor;
                     $theme = $user->theme;
                     $logo = $user->logo;
@@ -47,6 +58,16 @@ class SearchController extends Controller
             
                     $user = User::where('id',Auth::id())->first();
                     // $user = User::where('id',1)->first();
+                    $items = DB::table('items')         
+                    ->join('categories','categories.id','=','categoryId')
+                    ->select('items.*','categories.categoryName as catName')       
+                    ->Where('itemName', 'like', '%'.$query.'%')
+                    ->orWhere('categoryId', 'like', '%'.$query.'%')
+                    ->orWhere('itemCode', 'like', '%'.$query.'%')
+                    ->orWhere('pic', 'like', '%'.$query.'%')
+                    ->orWhere('information', 'like', '%'.$query.'%')
+                    ->get();
+
                     $textcolor = $user->textcolor;
                     $theme = $user->theme;
                     $logo = $user->logo;
