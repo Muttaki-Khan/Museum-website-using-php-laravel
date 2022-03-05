@@ -30,9 +30,9 @@ class FrontController extends Controller
       if($is_admin==false) {
         $user = User::where('id',$museum_id)->first();
 
-        $latest = item::latest()->first();
-        $latest2 = DB::table('items')->orderBy('id', 'desc')->skip(1)->take(1)->get();
-        $latest3 = DB::table('items')->orderBy('id', 'desc')->skip(2)->take(1)->get();
+        $latest = item::latest()->where('user_id',$museum_id)->first();
+        $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
+        $latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(2)->take(1)->get();
       
         $theme = $user->theme;
         $logo = $user->logo;
@@ -49,9 +49,9 @@ class FrontController extends Controller
       }else{
 
         $user = User::where('id',Auth::id())->first();
-        $latest = item::latest()->first();
-        $latest2 = DB::table('items')->orderBy('id', 'desc')->skip(1)->take(1)->get();
-        $latest3 = DB::table('items')->orderBy('id', 'desc')->skip(2)->take(1)->get();
+        $latest = item::latest()->where('user_id',$museum_id)->first();
+        $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
+        $latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(2)->take(1)->get();
 
         $theme = $user->theme;
         $logo = $user->logo;
