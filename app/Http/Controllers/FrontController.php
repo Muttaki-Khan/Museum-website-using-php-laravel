@@ -28,7 +28,14 @@ class FrontController extends Controller
       }
       if($is_admin==false) {
         $user = User::where('id',$museum_id)->first();
-        $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+        
+        if(DB::table('contacts')->where('user_id')->exists()){
+
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+        }else{
+          $contacts = DB::table('contacts')->where('user_id',1)->first();
+
+        }
 
         $latest = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(0)->take(1)->get();
         $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
