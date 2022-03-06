@@ -39,13 +39,33 @@ class MainHomeController extends Controller
         $textcolor = $user->textcolor;
         $categories = category::all();
         $footimg = $user->footimg;
-        $latest = item::latest()->first();
-        $latest2 = DB::table('items')->orderBy('id', 'desc')->skip(1)->take(1)->get();
-        $latest3 = DB::table('items')->orderBy('id', 'desc')->skip(2)->take(1)->get();
+        $latest = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(0)->take(1)->get();
+        $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
+        $latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(2)->take(1)->get();
         $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
 
        // return view('frontView.home.mainHome');
         return view('frontView.home.homeContent', compact('contacts','theme','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3'));
     
+    }else{
+      
+
+      $user = User::where('id',Auth::id())->first();
+      // $latest =  item::latest()->where('user_id',$museum_id)->first();
+      $latest = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(0)->take(1)->get();
+      $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
+      $latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(2)->take(1)->get();
+      $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+      $theme = $user->theme;
+      $logo = $user->logo;
+      $font = $user->font;
+      $img1 = $user->img1;
+      $img2 = $user->img2;
+      $img3 = $user->img3;
+      $textcolor = $user->textcolor;
+      $categories = category::all();
+      $footimg = $user->footimg;
+      return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3'));
     }
+
 }}

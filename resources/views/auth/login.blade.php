@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+                            <!-- <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
  
                             <div class="col-md-6">
                                 <select id="role_id" class="form-control{{ $errors->has('role_id') ? 'is-invalid' : '' }}" name="role_id">
@@ -40,7 +40,7 @@
                                         <strong>{{ $errors->first('role_id') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="form-group row">
@@ -77,7 +77,7 @@
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        <!-- {{ __('Forgot Your Password?') }} -->
                                     </a>
                                 @endif
                             </div>
