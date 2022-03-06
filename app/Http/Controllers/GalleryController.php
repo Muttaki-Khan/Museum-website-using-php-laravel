@@ -30,7 +30,7 @@ class GalleryController extends Controller
             $latest = item::latest()->first();
             $latest = $latest->pic;
             $imges = DB::table('items')->where('user_id',$museum_id)->Paginate(6);
-
+            $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
 
             $theme = $user->theme;
             $logo = $user->logo;
@@ -45,7 +45,9 @@ class GalleryController extends Controller
     
             $user = User::where('id',Auth::id())->first();
             // $user = User::where('id',1)->first();
-            
+            $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+            $imges = DB::table('items')->where('user_id',Auth::id())->Paginate(6);
+
             $theme = $user->theme;
             $logo = $user->logo;
             $font = $user->font;

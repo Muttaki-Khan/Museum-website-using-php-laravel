@@ -19,7 +19,6 @@ class SearchController extends Controller
 {
    public function searchitem(Request $request){
         $query = $request->get('search');
-        $contacts = contacts::where('id',1)->first();
         $museum_id = session('museum_id', '1');
 
 
@@ -32,9 +31,11 @@ class SearchController extends Controller
                   }
                   if($is_admin==false) {
                    $user = User::where('id',$museum_id)->first();
+                   $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
 
                    
-                  $items = DB::table('items')         
+                  $items = DB::table('items')
+                  ->where('user_id',$museum_id)         
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')       
                   ->Where('itemName', 'like', '%'.$query.'%')
@@ -43,7 +44,6 @@ class SearchController extends Controller
                   ->orWhere('pic', 'like', '%'.$query.'%')
                   ->orWhere('information', 'like', '%'.$query.'%')
                   ->get();
-
 
                     $textcolor = $user->textcolor;
                     $theme = $user->theme;
@@ -57,8 +57,10 @@ class SearchController extends Controller
                   }else{
             
                     $user = User::where('id',Auth::id())->first();
-                    // $user = User::where('id',1)->first();
-                    $items = DB::table('items')         
+                    $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+
+                    $items = DB::table('items')
+                    ->where('user_id',Auth::id())         
                     ->join('categories','categories.id','=','categoryId')
                     ->select('items.*','categories.categoryName as catName')       
                     ->Where('itemName', 'like', '%'.$query.'%')
@@ -75,7 +77,7 @@ class SearchController extends Controller
                     $categories = category::all();
                     $footimg = $user->footimg;
 
-                    return view('frontView.home.item', compact('items','textcolor','categories','footimg','user','theme','logo','font'));
+                    return view('frontView.home.item', compact('items','categories','footimg','textcolor','user','contacts','theme','logo','font'));
                   }
         // return view('frontView.home.item',['items'=>$items]);
     }

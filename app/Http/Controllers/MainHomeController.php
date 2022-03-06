@@ -29,7 +29,7 @@ class MainHomeController extends Controller
           $is_admin=false;
         }
         if($is_admin==false) {
-          $user = User::where('id',$museum_id)->first();
+        $user = User::where('id',$museum_id)->first();
 		    $theme = $user->theme;
         $logo = $user->logo;
         $font = $user->font;
@@ -42,7 +42,7 @@ class MainHomeController extends Controller
         $latest = item::latest()->first();
         $latest2 = DB::table('items')->orderBy('id', 'desc')->skip(1)->take(1)->get();
         $latest3 = DB::table('items')->orderBy('id', 'desc')->skip(2)->take(1)->get();
-        $contacts = contacts::where('id',1)->first();
+        $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
 
        // return view('frontView.home.mainHome');
         return view('frontView.home.homeContent', compact('contacts','theme','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3'));
