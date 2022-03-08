@@ -29,5 +29,5 @@
 </div>
 
 <script>
-$( ".coupons" ).css( "background", "url(../public/{{$footimg}}) no-repeat center" );
+$( ".coupons" ).css( "background", "url(http://103.18.2.184/{{$footimg}}) no-repeat center" );
 </script>

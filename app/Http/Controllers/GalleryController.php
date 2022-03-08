@@ -39,7 +39,7 @@ class GalleryController extends Controller
             $categories = category::all();
             $footimg = $user->footimg;
             
-            return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg',));
+            return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg'));
     
           }else{
     
@@ -57,7 +57,6 @@ class GalleryController extends Controller
             return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg'));
           }
         			 
-    	// return view('frontView.home.gallery',['img'=>$img]);
     }
 
 

@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="{{ url('/info2')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="{{ url('/item/manage')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="{{ url('/staff/manage')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="{{ url('/category/manage')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

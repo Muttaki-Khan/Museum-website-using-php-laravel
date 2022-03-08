@@ -5,7 +5,7 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="{{ url('/mainhome')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{{ url('/home')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category Control<span class="fa arrow"></span></a>
@@ -48,13 +48,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Exhibition Control<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Event Control<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ url('/exhi/entry')}}">Exhibition  Entry</a>
+                                    <a href="{{ url('/exhi/entry')}}">Event  Entry</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/exhi/manage')}}">Exhibition  Manage</a>
+                                    <a href="{{ url('/exhi/manage')}}">Event  Manage</a>
                                 </li>
                                
                             </ul>

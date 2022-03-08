@@ -6,7 +6,7 @@
 
                     </div>
                     <div class="col-lg-6 mt-lg-0 mt-5 cwp23-img">
-                       <a href="{{url('/')}}"> <img src="{{ asset('frontEnd') }}/images/banner.png" style="width:200%" class="img-fluid" alt="" /></a>
+                       <a href="{{url('/')}}"> <img src="{{ asset('frontEnd') }}/images/banner.PNG" style="width:200%" class="img-fluid" alt="" /></a>
                     </div>
                     
                 </div>
