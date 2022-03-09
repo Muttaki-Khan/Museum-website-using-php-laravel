@@ -44,26 +44,26 @@
 						      <hr>
     <h4 style="color: green;">{{Session::get('success')}}</h4>
 
-							<h2>Address</h2> <br>
+							<h2 class="{{$font}}">Address</h2> <br>
 							
 						
 						<div class="mb-20">
 							@foreach($contact as $contact)
-							<p>{{ $contact->address }}</p>
+							<p class="{{$font}}">{{ $contact->address }}</p>
 							@endforeach
 						</div>
 						<div class="mb-20">
 
-							<h3>For any required, kindly contact</h3>
-							<p>{{ $contact->contact1 }}</p>
-							<p>{{ $contact->contact2 }}</p>
-							<p>{{ $contact->contact3 }}</p>
+							<h3 class="{{$font}}">For any required, kindly contact</h3>
+							<p class="{{$font}}">{{ $contact->contact1 }}</p>
+							<p class="{{$font}}">{{ $contact->contact2 }}</p>
+							<p class="{{$font}}">{{ $contact->contact3 }}</p>
 						</div>
 						<div class="mail">
 
-							<h3>Email</h3>
-							<p>{{ $contact->email1 }}</p>
-							<p>{{ $contact->email3 }}</p>
+							<h3 class="{{$font}}">Email</h3>
+							<p class="{{$font}}">{{ $contact->email1 }}</p>
+							<p class="{{$font}}">{{ $contact->email3 }}</p>
 						</div>
 					</div>
 					<form class="contact-form" action="{{url('newMsg')}}" method="post">

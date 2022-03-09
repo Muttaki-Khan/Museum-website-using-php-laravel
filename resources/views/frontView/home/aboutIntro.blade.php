@@ -30,7 +30,7 @@
 @section('feature')
 		
 	<div class="panel-body">
-		      <font face = "Times New Roman" class="{{$font}}" size = "5" style="font-size:2vw;">Introduction</font><br/>
+		      <font face = "Times New Roman" class="{{$font}}" size = "5" style="font-size:1.5vw;">Introduction</font><br/>
 
 		
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -38,7 +38,7 @@
                                     <tr>
                                     @foreach($aboutIntro as $singleAbout)
                                     <tr class="odd gradeX">
-                                        <td><h4>{{$singleAbout->introduction}}</h4> </td>
+                                        <td><h4 class="{{$font}}">{{$singleAbout->introduction}}</h4> </td>
 
                                         
                                         

@@ -39,12 +39,12 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>SI.</th>
-                                        <th>Name</th>
+                                        <th class="{{$font}}">SI.</th>
+                                        <th class="{{$font}}">Name</th>
                                         
-                                        <th>Rank</th>
-                                        <th>Picture</th>
-                                        <th>Email</th>
+                                        <th class="{{$font}}">Rank</th>
+                                        <th class="{{$font}}">Picture</th>
+                                        <th class="{{$font}}">Email</th>
                                         
                                     </tr>
                                 </thead>
@@ -55,13 +55,12 @@
                                      ?>
                                     @foreach($staff as $singlestaff)
                                     <tr class="odd gradeX">
-                                        <td>{{++$i}}</td>
-                                        <td>{{$singlestaff->staffName}} </td>
-                                        <td>{{$singlestaff->staffRank}}</td>
+                                        <td class="{{$font}}">{{++$i}}</td>
+                                        <td class="{{$font}}">{{$singlestaff->staffName}} </td>
+                                        <td class="{{$font}}">{{$singlestaff->staffRank}}</td>
                                         <td><img src="{{asset($singlestaff->pic)}}" width="60"alt-"no pic"></td>
                                         
-                                        <td>{{$singlestaff->Email}}</td>
-
+                                        <td class="{{$font}}">{{$singlestaff->Email}}</td>
                                         
                                         
                                     </tr>

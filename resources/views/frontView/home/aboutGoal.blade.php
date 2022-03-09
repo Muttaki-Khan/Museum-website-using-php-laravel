@@ -31,7 +31,7 @@
 		
 	<div class="panel-body">
 		
-		      <font face = "Times New Roman" class="{{$font}}" size = "5" style="font-size:2vw;">Goals</font><br />
+		      <font face = "Times New Roman" class="{{$font}}" size = "5" style="font-size:1.5vw;">Goals</font><br />
 
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
@@ -39,7 +39,7 @@
                                     @foreach($aboutGoal as $singleAbout)
                                     <tr class="odd gradeX">
                                         
-                                        <td><h4>{{$singleAbout->goals}}</h4> </td>
+                                        <td><h4 class="{{$font}}">{{$singleAbout->goals}}</h4> </td>
 
                                         
                                         

@@ -33,14 +33,12 @@
 		
 	<div class="panel-body">
 		
-		      <font face = "Times New Roman" class="{{$font}}" size = "5" style="font-size:2vw;">Upcoming Events</font><br />
+		      <font face = "Times New Roman" class="{{$font}}" size = "5" style="font-size:1.5vw;">Upcoming Events</font><br />
 
                              <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Event Information</th>
-                                        
-                                       
+                                        <!-- <th>Event Information</th> -->
                                         
                                     </tr>
                                 </thead>
@@ -48,7 +46,7 @@
                                     
                                     @foreach($exhibitionIntro as $singleexhibition)
                                     <tr class="odd gradeX">
-                                        <td><h4>{{$singleexhibition->introduction}}</h4> </td>
+                                        <td><h4 class="{{$font}}">{{$singleexhibition->introduction}}</h4> </td>
 
                                         
                                         

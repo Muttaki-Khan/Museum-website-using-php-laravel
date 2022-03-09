@@ -49,21 +49,18 @@
                                         <th class="{{$font}}">Category Name</th>
                                         <th class="{{$font}}">Code</th>
                                         <th class="{{$font}}">Picture</th>
-                                        <!-- <th>Information</th> -->
                                         <th class="{{$font}}">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($items as $item)
                                     <tr>
-                                        <td>{{++$i}}</td>
-                                        <td>{{$item->itemName}}</td>
-                                        <td>{{$item->catName}}</td>
-                                        <td>{{$item->itemCode}}</td>
+                                        <td class="{{$font}}">{{++$i}}</td>
+                                        <td class="{{$font}}">{{$item->itemName}}</td>
+                                        <td class="{{$font}}">{{$item->catName}}</td>
+                                        <td class="{{$font}}">{{$item->itemCode}}</td>
                                         <td><img src="{{$item->pic}}" width="180"alt-"no pic"></td>
-                                        
-                                        <!-- <td>{{$item->information}}</td> -->
-                                        <td><a href="{{url('/'.$item->id)}}">View</a> </td>
+                                         <td class="{{$font}}"><a href="{{url('/'.$item->id)}}">View</a> </td>
 
                                         
                                     </tr>

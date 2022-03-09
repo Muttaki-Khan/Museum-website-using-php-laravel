@@ -18,23 +18,23 @@
 			<div class="clearfix"></div>
 			<div class="sign-grds">
 				<div class="col-md-4 sign-gd">
-					<h4>Information</h4>
+					<h4 class="{{$font}}">Information</h4>
 					<ul>
-						<li><a href="mainhome">Home</a></li>
-						<li><a href="abot">About</a></li>
-						<li><a href="item">Category</a></li>
-						<li><a href="gallery">Gallery</a></li>
-						<li><a href="exhibition"></a>Exhibition</li>
-						<li><a href="contact">Contact</a></li>
+						<li><a class="{{$font}}" href="mainhome">Home</a></li>
+						<li><a class="{{$font}}" href="abot">About</a></li>
+						<li><a class="{{$font}}" href="item">Category</a></li>
+						<li><a class="{{$font}}" href="gallery">Gallery</a></li>
+						<li><a class="{{$font}}" href="exhibition"></a>Exhibition</li>
+						<li><a class="{{$font}}" href="contact">Contact</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-md-6 sign-gd-two ">
-					<h4>Museum Information</h4>
+					<h4 class="{{$font}}">Museum Information</h4>
 					<ul>
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : {{$contacts->address}}</li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : {{$contacts->email1}}</li>
-						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : {{$contacts->contact1}}</li>
+						<li><i class="glyphicon glyphicon-map-marker {{$font}}" aria-hidden="true"></i>Address : {{$contacts->address}}</li>
+						<li><i class="glyphicon glyphicon-envelope {{$font}}" aria-hidden="true"></i>Email : {{$contacts->email1}}</li>
+						<li><i class="glyphicon glyphicon-earphone {{$font}}" aria-hidden="true"></i>Phone : {{$contacts->contact1}}</li>
 					</ul>
 				</div>
 				<div class="col-md-4 sign-gd flickr-post">

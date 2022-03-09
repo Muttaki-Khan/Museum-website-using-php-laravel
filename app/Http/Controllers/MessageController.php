@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
+use App\contacts;
 use App\Messages;
 use Illuminate\Http\Request;
 
