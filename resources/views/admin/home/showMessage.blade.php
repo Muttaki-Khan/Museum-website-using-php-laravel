@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	Customer Message
+	Unread Messages
 	
 @endsection
 @section('mainContent')

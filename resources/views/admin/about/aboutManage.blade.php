@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	About Control Area
+	About Manage
 	<br>
     {{ Session::get('message')}}
 @endsection

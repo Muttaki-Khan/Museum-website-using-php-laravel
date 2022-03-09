@@ -393,7 +393,8 @@ class FrontController extends Controller
                   $items = DB::table('items')
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')
-                  ->where('user_id', $museum_id)
+                  ->where('items.user_id', $museum_id)
+                  ->where('categories.user_id', $museum_id)
                   ->paginate(10);
           
                   $theme = $user->theme;
@@ -412,7 +413,8 @@ class FrontController extends Controller
                   $items = DB::table('items')
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')
-                  ->where('user_id', Auth::id())
+                  ->where('items.user_id', Auth::id())
+                  ->where('categories.user_id', Auth::id())
                   ->paginate(10);
                   if(DB::table('contacts')->where('user_id')->exists()){
 

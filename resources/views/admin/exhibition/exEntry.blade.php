@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	exhibition Entry
+	Event Entry
 
     <br>
     {{ Session::get('message')}}

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	exhibition Control Area
+	Event Manage
 	<br>
     {{ Session::get('message')}}
 @endsection

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	exhibition Edit
+	Event Edit
 	
 @endsection
 
