@@ -50,7 +50,7 @@
 						<div class="mb-20">
 							@foreach($contact as $contact)
 							<p class="{{$font}}">{{ $contact->address }}</p>
-							@endforeach
+							
 						</div>
 						<div class="mb-20">
 
@@ -65,6 +65,7 @@
 							<p class="{{$font}}">{{ $contact->email1 }}</p>
 							<p class="{{$font}}">{{ $contact->email3 }}</p>
 						</div>
+						@endforeach
 					</div>
 					<form class="contact-form" action="{{url('newMsg')}}" method="post">
 						{{ csrf_field() }}

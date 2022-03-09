@@ -126,8 +126,13 @@ class FrontController extends Controller
       if($is_admin==false) {
         $user = User::where('id',$museum_id)->first();
         $aboutIntro = DB::table('abouts')->where('user_id', $museum_id)->get();
-        $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+        if(DB::table('contacts')->where('user_id')->exists()){
 
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+        }else{
+          $contacts = DB::table('contacts')->where('user_id',1)->first();
+
+        }
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -165,8 +170,13 @@ class FrontController extends Controller
         }
         if($is_admin==false) {
           $user = User::where('id',$museum_id)->first();
-          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+          if(DB::table('contacts')->where('user_id')->exists()){
 
+            $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+          }else{
+            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  
+          }
           $aboutGoal = DB::table('abouts')->where('user_id', $museum_id)->get();
 
           $theme = $user->theme;
@@ -206,8 +216,13 @@ class FrontController extends Controller
         }
         if($is_admin==false) {
           $user = User::where('id',$museum_id)->first();
-          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
-          $exhibitionIntro  = DB::table('exhibitions')->where('user_id', $museum_id)->get();
+          if(DB::table('contacts')->where('user_id')->exists()){
+
+            $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+          }else{
+            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  
+          }          $exhibitionIntro  = DB::table('exhibitions')->where('user_id', $museum_id)->get();
   
           $theme = $user->theme;
           $logo = $user->logo;
@@ -239,46 +254,47 @@ class FrontController extends Controller
 
     public function contact(){
 
-        $museum_id = session('museum_id', '1');
-        $contacts = contacts::where('id',1)->first();
-        $is_admin = true;
-        if(Auth::user()==null) {
-          $is_admin=false;
-        } else if(User::where('id',Auth::id())->first()->role_id==2) {
-          $is_admin=false;
-        }
-        if($is_admin==false) {
-          $user = User::where('id',$museum_id)->first();
-          $contact  = DB::table('contacts')->where('user_id', $museum_id)->get();
-  
-          $theme = $user->theme;
-          $logo = $user->logo;
-          $font = $user->font;
-          $textcolor = $user->textcolor;
-          $categories = category::all();
-          $footimg = $user->footimg;
-          $mapimage = $user->mapimage;
-          return view('frontView.home.contact', compact('contact','contacts','theme','logo','font','textcolor','categories','footimg','mapimage'));
-  
-        }else{
-  
-          $user = User::where('id',Auth::id())->first();
-          // $user = User::where('id',1)->first();
-          $contact  = DB::table('contacts')->where('user_id', Auth::id())->get();
-
-          $theme = $user->theme;
-          $logo = $user->logo;
-          $font = $user->font;
-          $textcolor = $user->textcolor;
-          $categories = category::all();
-          $footimg = $user->footimg;
-          $mapimage = $user->mapimage;
-
-          return view('frontView.home.contact', compact('contact','contacts','theme','logo','font','textcolor','categories','footimg','mapimage'));
-        }
+      $museum_id = session('museum_id', '1');
+      $contacts = contacts::where('id',1)->first();
+      $is_admin = true;
+      if(Auth::user()==null) {
+        $is_admin=false;
+      } else if(User::where('id',Auth::id())->first()->role_id==2) {
+        $is_admin=false;
+      }
+      if($is_admin==false) {
+        $user = User::where('id',$museum_id)->first();
         
-    	// return view('frontView.home.contact',compact('contact'));
-    }
+        $contact  = DB::table('contacts')->where('user_id', $museum_id)->get();
+
+        $theme = $user->theme;
+        $logo = $user->logo;
+        $font = $user->font;
+        $textcolor = $user->textcolor;
+        $categories = category::all();
+        $footimg = $user->footimg;
+        $mapimage = $user->mapimage;
+        return view('frontView.home.contact', compact('contact','contacts','theme','logo','font','textcolor','categories','footimg','mapimage'));
+
+      }else{
+
+        $user = User::where('id',Auth::id())->first();
+        // $user = User::where('id',1)->first();
+        $contact  = DB::table('contacts')->where('user_id', Auth::id())->get();
+
+        $theme = $user->theme;
+        $logo = $user->logo;
+        $font = $user->font;
+        $textcolor = $user->textcolor;
+        $categories = category::all();
+        $footimg = $user->footimg;
+        $mapimage = $user->mapimage;
+
+        return view('frontView.home.contact', compact('contact','contacts','theme','logo','font','textcolor','categories','footimg','mapimage'));
+      }
+      
+    // return view('frontView.home.contact',compact('contact'));
+  }
     public function staff(){
 
         $museum_id = session('museum_id', '1');
@@ -290,7 +306,13 @@ class FrontController extends Controller
         }
         if($is_admin==false) {
           $user = User::where('id',$museum_id)->first();
-          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+          if(DB::table('contacts')->where('user_id')->exists()){
+
+            $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+          }else{
+            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  
+          }          
           $staff = DB::table('staffs')->where('user_id', $museum_id)->get();
   
           $theme = $user->theme;
@@ -329,8 +351,13 @@ class FrontController extends Controller
                  }
                  if($is_admin==false) {
                   $user = User::where('id',$museum_id)->first();
-                  $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+                  if(DB::table('contacts')->where('user_id')->exists()){
 
+                    $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+                  }else{
+                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          
+                  }
                   $items = DB::table('items')
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')
@@ -387,8 +414,13 @@ class FrontController extends Controller
       }
       if($is_admin==false) {
         $user = User::where('id',$museum_id)->first();
-        $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+        if(DB::table('contacts')->where('user_id')->exists()){
 
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+        }else{
+          $contacts = DB::table('contacts')->where('user_id',1)->first();
+
+        }
                   $theme = $user->theme;
                   $logo = $user->logo;
                   $font = $user->font;
@@ -433,8 +465,13 @@ class FrontController extends Controller
                  }
                  if($is_admin==false) {
                    $user = User::where('id',$museum_id)->first();
-                   $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+                   if(DB::table('contacts')->where('user_id')->exists()){
 
+                    $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+                  }else{
+                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          
+                  }
                   $theme = $user->theme;
                   $logo = $user->logo;
                   $font = $user->font;
