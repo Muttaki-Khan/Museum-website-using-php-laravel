@@ -24,7 +24,7 @@
 						<li><a class="{{$font}}" href="abot">About</a></li>
 						<li><a class="{{$font}}" href="item">Category</a></li>
 						<li><a class="{{$font}}" href="gallery">Gallery</a></li>
-						<li><a class="{{$font}}" href="exhibition"></a>Exhibition</li>
+						<li><a class="{{$font}}" href="exhibition">Exhibition</a></li>
 						<li><a class="{{$font}}" href="contact">Contact</a></li>
 					</ul>
 				</div>
