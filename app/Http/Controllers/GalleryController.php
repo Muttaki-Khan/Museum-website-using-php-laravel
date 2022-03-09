@@ -30,7 +30,13 @@ class GalleryController extends Controller
             $latest = item::latest()->first();
             $latest = $latest->pic;
             $imges = DB::table('items')->where('user_id',$museum_id)->Paginate(6);
-            $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+            if(DB::table('contacts')->where('user_id')->exists()){
+
+              $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+            }else{
+              $contacts = DB::table('contacts')->where('user_id',1)->first();
+    
+            }
 
             $theme = $user->theme;
             $logo = $user->logo;

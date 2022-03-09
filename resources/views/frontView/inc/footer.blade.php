@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="col-md-3 footer-left">
 			<h2><a href=""><img src="{{$logo}}" width="180" height="70" alt=" " /></a></h2>
-			<p>University of Malaya...</p>
+			<p>Website Rights UM</p>
 		</div>
 		<div class="col-md-9 footer-right">
 			<div class="col-sm-7 newsleft">
