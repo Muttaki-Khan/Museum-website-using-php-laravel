@@ -53,21 +53,11 @@
             <br>
 
 
-            <h1 style="text-align: center;">Description</h1><br>
-            <p style="text-align: center;">Di dalam era kemajuan teknologi
-                komputer, perubahan budaya
-                teknologi bukan sahaja menyentuh
-                sektor industri, malah ia juga dapat
-                memberi kesan kepada
-                pemeliharaan warisan budaya.
-                Program ini melibatkan
-                pemindahan ilmu (latihan):
-                •Pembinaan/ penggunaan laman
-                web untuk proses pendigitalan
-                artifak muzium
-                •Aplikasi algoritma pembelajaran
-                mesin untuk pengecaman artifak
-                •Proses fotogrametri.</p><br>
+            <h1 style="text-align: center;">Pengenalan</h1><br>
+            <p style="text-align: center;">Di dalam era kemajuan teknologi komputer, perubahan budaya teknologi bukan sahaja menyentuh sektor industri, malah ia juga dapat memberi kesan kepada pemeliharaan warisan budaya. Kesinambungan daripada projek sebelum ini iaitu Pembelajaran mesin bagi pengelasan Kendi untuk pemeliharaan warisan budaya, program ini pula cuba mempertengahkan pemeliharaan ini melalui laman web muzium digital dan pengenalan kepada pembelajaran mesin. Program ini adalah anjuran bersama Fakulti Sains Komputer dan Teknologi Maklumat, Fakulti Kejuruteraan, Fakulti Seni Kreatif dan Muzium Seni Asia Universiti Malaya. Program ini melibatkan pemindahan ilmu (latihan):
+pembinaan/ penggunaan laman web untuk proses pendigitalan artifak muzium
+aplikasi algoritma pembelajaran mesin untuk pengecaman artifak 
+proses fotogrametri menukar gambar 2D kepada 3D</p><br>
 
             <?php
             $i = 0;
