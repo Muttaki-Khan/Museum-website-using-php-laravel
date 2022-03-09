@@ -60,7 +60,13 @@ class FrontController extends Controller
         $latest = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(0)->take(1)->get();
         $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
         $latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(2)->take(1)->get();
-        $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+        if(DB::table('contacts')->where('user_id')->exists()){
+
+          $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+        }else{
+          $contacts = DB::table('contacts')->where('user_id',1)->first();
+
+        } 
         $theme = $user->theme;
         $logo = $user->logo;
         $font = $user->font;
@@ -146,7 +152,13 @@ class FrontController extends Controller
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
           $aboutIntro = DB::table('abouts')->where('user_id', Auth::id())->get();
-          $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+          if(DB::table('contacts')->where('user_id')->exists()){
+
+            $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+          }else{
+            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  
+          } 
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -192,7 +204,13 @@ class FrontController extends Controller
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
           $aboutGoal = DB::table('abouts')->where('user_id', Auth::id())->get();
-          $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();          
+          if(DB::table('contacts')->where('user_id')->exists()){
+
+            $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+          }else{
+            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  
+          } 
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -222,7 +240,8 @@ class FrontController extends Controller
           }else{
             $contacts = DB::table('contacts')->where('user_id',1)->first();
   
-          }          $exhibitionIntro  = DB::table('exhibitions')->where('user_id', $museum_id)->get();
+          }         
+           $exhibitionIntro  = DB::table('exhibitions')->where('user_id', $museum_id)->get();
   
           $theme = $user->theme;
           $logo = $user->logo;
@@ -237,7 +256,13 @@ class FrontController extends Controller
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
           $exhibitionIntro  = DB::table('exhibitions')->where('user_id', Auth::id())->get();
-          $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();          
+          if(DB::table('contacts')->where('user_id')->exists()){
+
+            $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+          }else{
+            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  
+          } 
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -281,6 +306,7 @@ class FrontController extends Controller
         $user = User::where('id',Auth::id())->first();
         // $user = User::where('id',1)->first();
         $contact  = DB::table('contacts')->where('user_id', Auth::id())->get();
+
 
         $theme = $user->theme;
         $logo = $user->logo;
@@ -328,7 +354,13 @@ class FrontController extends Controller
           $user = User::where('id',Auth::id())->first();
           // $user = User::where('id',1)->first();
           $staff = DB::table('staffs')->where('user_id', Auth::id())->get();
-          $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();          
+          if(DB::table('contacts')->where('user_id')->exists()){
+
+            $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+          }else{
+            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  
+          } 
           $theme = $user->theme;
           $logo = $user->logo;
           $font = $user->font;
@@ -382,7 +414,13 @@ class FrontController extends Controller
                   ->select('items.*','categories.categoryName as catName')
                   ->where('user_id', Auth::id())
                   ->paginate(10);
-                  $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();                  
+                  if(DB::table('contacts')->where('user_id')->exists()){
+
+                    $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+                  }else{
+                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          
+                  }                   
                   $theme = $user->theme;
                   $logo = $user->logo;
                   $font = $user->font;
@@ -433,7 +471,13 @@ class FrontController extends Controller
           
                   $user = User::where('id',Auth::id())->first();
                   // $user = User::where('id',1)->first();
-                  $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+                  if(DB::table('contacts')->where('user_id')->exists()){
+
+                    $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+                  }else{
+                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          
+                  } 
                   $theme = $user->theme;
                   $logo = $user->logo;
                   $font = $user->font;
@@ -484,7 +528,13 @@ class FrontController extends Controller
           
                   $user = User::where('id',Auth::id())->first();
                   // $user = User::where('id',1)->first();
-                  $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();                  
+                  if(DB::table('contacts')->where('user_id')->exists()){
+
+                    $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+                  }else{
+                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          
+                  } 
                   $theme = $user->theme;
                   $logo = $user->logo;
                   $font = $user->font;

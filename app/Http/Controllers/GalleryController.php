@@ -51,7 +51,13 @@ class GalleryController extends Controller
     
             $user = User::where('id',Auth::id())->first();
             // $user = User::where('id',1)->first();
-            $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+            if(DB::table('contacts')->where('user_id')->exists()){
+
+              $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+            }else{
+              $contacts = DB::table('contacts')->where('user_id',1)->first();
+    
+            } 
             $imges = DB::table('items')->where('user_id',Auth::id())->Paginate(6);
 
             $theme = $user->theme;
