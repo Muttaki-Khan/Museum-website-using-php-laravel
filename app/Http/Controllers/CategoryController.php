@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\category;
+use DB;
+use Illuminate\Support\Facades\Auth;
+
 class CategoryController extends Controller
 {
   	public function index(){
@@ -19,7 +22,8 @@ class CategoryController extends Controller
   		$category->categoryName = $request->name;
   		$category->description = $request->description;
   		$category->categoryName = $request->name;
-  
+        $category->user_id = Auth::id();
+
 
   		$category->save();
 
@@ -30,7 +34,7 @@ class CategoryController extends Controller
 	}
   public function manage(){
 
-      $categories = Category::all();
+      $categories = DB::table('categories')->where('user_id', Auth::id())->get();
       return view('admin.category.categoryManage',['category'=>$categories]);
   }
 

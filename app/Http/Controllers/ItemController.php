@@ -12,7 +12,7 @@ class ItemController extends Controller
 {
     public function index(){
 
-      $categories = category::all();
+      $categories = DB::table('categories')->where('user_id', Auth::id())->get();
       return view('admin.item.itemEntry',['categories'=>$categories]); 
   }
   public function save(Request $request){

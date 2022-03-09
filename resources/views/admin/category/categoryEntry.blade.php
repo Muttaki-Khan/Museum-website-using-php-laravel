@@ -26,6 +26,9 @@
                                             <label>Description</label>
                                             <textarea class="form-control" name="description" placeholder="Enter description"> </textarea>
                                         </div>
+                                        <div class="form-group">
+                                        <input type="hidden"  name="user_id">
+                                        </div>
                                         
 
                                         <div class="form-group">
