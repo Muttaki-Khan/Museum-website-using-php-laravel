@@ -20,6 +20,10 @@
                                         <div class="form-group">
                                             
                                             <strong>Slideshow images</strong><br>
+                                            <strong>Recommended size 300KB-600KB</strong><br>
+
+                                            <strong>Recommended Dimesion 600 Height x 1200 width</strong><br>
+
                                             <input type="file" name="footimg">
                                             
 

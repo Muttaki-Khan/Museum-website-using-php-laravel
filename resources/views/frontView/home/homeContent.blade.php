@@ -86,7 +86,7 @@
 @section('mainContent')
 <div class="soft_new_arrivals">
 	<div class="container">
-		<h3 class="{{$font}}"><span>new </span>collections</h3>
+		<h3 class="{{$font}}" style="font-size:1.8vw;"><span>new </span>collections</h3>
 		<div class="new_grids">
 		
 

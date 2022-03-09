@@ -20,6 +20,10 @@
                                         <div class="form-group">
                                             
                                             <strong>Slideshow images</strong><br>
+                                            <strong>Recommended Size is 50KB-200KB</strong><br>
+                                            <strong>Recommended Dimesion 700x400</strong><br>
+
+
                                             <label>Choose Image 1</label>
                                             <input type="file" name="img1">
                                             <label>Choose Image 2</label>
