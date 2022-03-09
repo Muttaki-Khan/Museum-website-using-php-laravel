@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\contacts;
-use App\Messages;
+use App\messages;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
