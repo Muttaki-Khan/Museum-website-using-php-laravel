@@ -5,7 +5,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('/')}}">UM E-Museum</a>
+                <a class="navbar-brand" href="{{url('/')}}">Go To Museum</a>
             </div>
 
 
@@ -14,7 +14,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-messages">
+                    <!-- <ul class="dropdown-menu dropdown-messages">
                         <li>
                             <a href="#">
                                 <div>
@@ -26,8 +26,7 @@
                                 <div>Last messsages</div>
                             </a>
                         
-                    </ul>
-                    <!-- /.dropdown-messages -->
+                    </ul> -->
                 </li>
                 <!-- /.dropdown -->
                 <!-- <li class="dropdown">
@@ -174,9 +173,9 @@
                         <i class="fa fa-user fa-fw"></i>{{ Auth::user()->name }}  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <!-- <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a> -->
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <!-- <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a> -->
                         </li>
                         <li class="divider"></li>
 
