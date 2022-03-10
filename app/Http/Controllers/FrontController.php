@@ -415,7 +415,7 @@ class FrontController extends Controller
                   ->select('items.*','categories.categoryName as catName')
                   ->where('items.user_id', Auth::id())
                   ->where('categories.user_id', Auth::id())
-                  ->paginate(10);
+                  ->paginate(100);
                   if(DB::table('contacts')->where('user_id')->exists()){
 
                     $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
