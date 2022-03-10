@@ -56,7 +56,8 @@ class ItemController extends Controller
       $items = DB::table('items')
                   ->join('categories','categories.id','=','categoryId')
                   ->select('items.*','categories.categoryName as catName')
-                  ->where('user_id',Auth::id())
+                  ->where('items.user_id',Auth::id())
+                  ->where('categories.user_id',Auth::id())
                   ->paginate(3);
                  // ->where('categories')
       
