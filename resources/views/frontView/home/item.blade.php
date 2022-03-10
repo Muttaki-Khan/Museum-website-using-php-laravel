@@ -69,9 +69,6 @@
                             </table>
                             
                         </div>
-    <div class="col-12 text-center">
-            {{ $items->links() }}
-        </div>
-    </div>
+ 
                         
 @endsection

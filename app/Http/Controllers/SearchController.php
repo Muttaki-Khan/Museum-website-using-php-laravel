@@ -35,9 +35,10 @@ class SearchController extends Controller
 
                    
                   $items = DB::table('items')
-                  ->where('user_id',$museum_id)         
+                  ->where('items.user_id',$museum_id)
                   ->join('categories','categories.id','=','categoryId')
-                  ->select('items.*','categories.categoryName as catName')       
+                  ->select('items.*','categories.categoryName as catName')   
+                  ->where('categories.user_id',$museum_id)    
                   ->Where('itemName', 'like', '%'.$query.'%')
                   ->orWhere('categoryId', 'like', '%'.$query.'%')
                   ->orWhere('itemCode', 'like', '%'.$query.'%')
@@ -60,9 +61,10 @@ class SearchController extends Controller
                     $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
 
                     $items = DB::table('items')
-                    ->where('user_id',Auth::id())         
+                    ->where('items.user_id',Auth::id())         
                     ->join('categories','categories.id','=','categoryId')
-                    ->select('items.*','categories.categoryName as catName')       
+                    ->select('items.*','categories.categoryName as catName') 
+                    ->where('categories.user_id',Auth::id())          
                     ->Where('itemName', 'like', '%'.$query.'%')
                     ->orWhere('categoryId', 'like', '%'.$query.'%')
                     ->orWhere('itemCode', 'like', '%'.$query.'%')
