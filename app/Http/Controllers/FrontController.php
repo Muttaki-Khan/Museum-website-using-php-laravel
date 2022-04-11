@@ -31,9 +31,9 @@ class FrontController extends Controller
         
         if(DB::table('contacts')->where('user_id')->exists()){
 
-          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+              $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
         }else{
-          $contacts = DB::table('contacts')->where('user_id',1)->first();
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
 
         }
 
@@ -64,7 +64,7 @@ class FrontController extends Controller
 
           $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
         }else{
-          $contacts = DB::table('contacts')->where('user_id',1)->first();
+$contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
 
         } 
         $theme = $user->theme;
@@ -136,7 +136,7 @@ class FrontController extends Controller
 
           $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
         }else{
-          $contacts = DB::table('contacts')->where('user_id',1)->first();
+$contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
 
         }
           $theme = $user->theme;
@@ -156,7 +156,7 @@ class FrontController extends Controller
 
             $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
           }else{
-            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
   
           } 
           $theme = $user->theme;
@@ -186,7 +186,7 @@ class FrontController extends Controller
 
             $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           }else{
-            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
   
           }
           $aboutGoal = DB::table('abouts')->where('user_id', $museum_id)->get();
@@ -208,7 +208,7 @@ class FrontController extends Controller
 
             $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
           }else{
-            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
   
           } 
           $theme = $user->theme;
@@ -238,7 +238,7 @@ class FrontController extends Controller
 
             $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           }else{
-            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
   
           }         
            $exhibitionIntro  = DB::table('exhibitions')->where('user_id', $museum_id)->get();
@@ -260,7 +260,7 @@ class FrontController extends Controller
 
             $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
           }else{
-            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
   
           } 
           $theme = $user->theme;
@@ -336,7 +336,7 @@ class FrontController extends Controller
 
             $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           }else{
-            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
   
           }          
           $staff = DB::table('staffs')->where('user_id', $museum_id)->get();
@@ -358,7 +358,7 @@ class FrontController extends Controller
 
             $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
           }else{
-            $contacts = DB::table('contacts')->where('user_id',1)->first();
+  $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
   
           } 
           $theme = $user->theme;
@@ -387,7 +387,7 @@ class FrontController extends Controller
 
                     $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
                   }else{
-                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           
                   }
                   $items = DB::table('items')
@@ -420,7 +420,7 @@ class FrontController extends Controller
 
                     $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
                   }else{
-                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           
                   }                   
                   $theme = $user->theme;
@@ -458,7 +458,7 @@ class FrontController extends Controller
 
           $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
         }else{
-          $contacts = DB::table('contacts')->where('user_id',1)->first();
+$contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
 
         }
                   $theme = $user->theme;
@@ -477,7 +477,7 @@ class FrontController extends Controller
 
                     $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
                   }else{
-                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           
                   } 
                   $theme = $user->theme;
@@ -515,7 +515,7 @@ class FrontController extends Controller
 
                     $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
                   }else{
-                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           
                   }
                   $theme = $user->theme;
@@ -534,7 +534,7 @@ class FrontController extends Controller
 
                     $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
                   }else{
-                    $contacts = DB::table('contacts')->where('user_id',1)->first();
+          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           
                   } 
                   $theme = $user->theme;

@@ -34,7 +34,7 @@ class GalleryController extends Controller
 
               $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
             }else{
-              $contacts = DB::table('contacts')->where('user_id',1)->first();
+              $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
     
             }
 
