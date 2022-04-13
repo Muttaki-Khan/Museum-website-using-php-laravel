@@ -31,9 +31,13 @@ class FrontController extends Controller
         
         if(DB::table('contacts')->where('user_id')->exists()){
 
-              $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
-        }else{
-          $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
+            $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+        } else{
+
+          $contacts = DB::table('contacts')->where('user_id', $museum_id)->first();
+          if($contacts==null) {
+            $contacts = DB::table('contacts')->where('user_id', 1)->first();
+          }
 
         }
 
@@ -50,8 +54,10 @@ class FrontController extends Controller
         $textcolor = $user->textcolor;
         $categories = category::all();
         $footimg = $user->footimg;
+        $colablink = $user->colablink;
+
      
-        return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3'));
+        return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3','colablink'));
 
       }else{
 
@@ -60,13 +66,11 @@ class FrontController extends Controller
         $latest = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(0)->take(1)->get();
         $latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(1)->take(1)->get();
         $latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',$museum_id)->skip(2)->take(1)->get();
-        if(DB::table('contacts')->where('user_id')->exists()){
 
-          $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
-        }else{
-$contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
-
-        } 
+        $contacts = DB::table('contacts')->where('user_id',Auth::id())->first();
+        if($contacts==null){
+          $contacts = DB::table('contacts')->where('user_id',1)->first();
+        }
         $theme = $user->theme;
         $logo = $user->logo;
         $font = $user->font;
@@ -76,7 +80,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
         $textcolor = $user->textcolor;
         $categories = category::all();
         $footimg = $user->footimg;
-        return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3'));
+        $colablink = $user->colablink;
+
+        return view('frontView.home.homeContent', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3','colablink'));
       }
 
     }

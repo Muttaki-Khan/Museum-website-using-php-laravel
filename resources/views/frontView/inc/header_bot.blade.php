@@ -61,16 +61,8 @@
 		</div> -->
 
 		<div class="col-sm-3 newsright">
-				<!-- <a type="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="">Machine Learning Feature</a> -->
-				<?php
-				if (Auth::user() && strlen(Auth::user()->colablink)>5){
-				?>
-    			<a typ="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="{{ Auth::user()->colablink }} ">Machine Learning Feature</a>
-
-				<?php
 				
-				}
-				?>
+    			<a type="submit"  class="button {{$theme}} {{$font}} {{$textcolor}}" href="{{$colablink}} ">Machine Learning Feature</a>
 
 
 		</div>
