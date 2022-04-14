@@ -71,6 +71,8 @@ Route::get('/mainhome','MainHomeController@main');
 
 
 Route::get('/staff', 'FrontController@staff');
+Route::get('/threed', 'FrontController@threed');
+
 
 Route::get('/item', 'FrontController@item');
 // Route::get('view/{id}','FrontController@singleItem');
