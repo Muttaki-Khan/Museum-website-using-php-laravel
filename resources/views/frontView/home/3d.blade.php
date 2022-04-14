@@ -40,7 +40,7 @@
 </form>
 
 <form action="https://sketchfab.com/3d-models/texturedmesh-361c129ad7684e60916b1287919b4af9" target="_blank">
-     <p class="{{$font}}"> Perbadanan Adat Melayu & Warisan Negeri Selangor <input type="submit" value="Model 1" /></p><br>
+     <p class="{{$font}}"> Perbadanan Adat Melayu & Warisan Negeri Selangor  <input type="submit" value="Model 1" /></p><br>
 </form>
 
 
