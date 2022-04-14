@@ -52,8 +52,9 @@ class SearchController extends Controller
                     $font = $user->font;
                     $categories = category::all();
                     $footimg = $user->footimg;
+                    $colablink = $user->colablink;
 
-                    return view('frontView.home.item', compact('items','categories','footimg','textcolor','user','contacts','theme','logo','font'));
+                    return view('frontView.home.item', compact('items','categories','footimg','textcolor','user','contacts','theme','logo','font','colablink'));
             
                   }else{
             
@@ -78,8 +79,9 @@ class SearchController extends Controller
                     $font = $user->font;
                     $categories = category::all();
                     $footimg = $user->footimg;
+                    $colablink = $user->colablink;
 
-                    return view('frontView.home.item', compact('items','categories','footimg','textcolor','user','contacts','theme','logo','font'));
+                    return view('frontView.home.item', compact('items','categories','footimg','textcolor','user','contacts','theme','logo','font','colablink'));
                   }
         // return view('frontView.home.item',['items'=>$items]);
     }
