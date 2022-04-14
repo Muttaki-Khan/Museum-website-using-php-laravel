@@ -56,8 +56,6 @@ class FrontController extends Controller
         $categories = category::all();
         $footimg = $user->footimg;
         $colablink = $user->colablink;
-
-     
         return view('frontView.home.3d', compact('theme','contacts','logo','font','img1','img2','img3','textcolor','categories','footimg','latest','latest2','latest3','colablink'));
 
       }else{
@@ -220,7 +218,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.aboutIntro', compact('aboutIntro','theme','logo','font','textcolor','categories','footimg','contacts'));
+          $colablink = $user->colablink;
+
+          return view('frontView.home.aboutIntro', compact('aboutIntro','theme','logo','font','textcolor','categories','footimg','contacts','colablink'));
   
         }else{
   
@@ -240,7 +240,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.aboutIntro', compact('aboutIntro','contacts','theme','logo','font','textcolor','categories','footimg'));
+          $colablink = $user->colablink;
+
+          return view('frontView.home.aboutIntro', compact('aboutIntro','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
         }
     	// return view('frontView.home.aboutIntro',compact('aboutIntro'));
     }
@@ -272,7 +274,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.aboutGoal', compact('aboutGoal','contacts','theme','logo','font','textcolor','categories','footimg'));
+          $colablink = $user->colablink;
+
+          return view('frontView.home.aboutGoal', compact('aboutGoal','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
   
         }else{
   
@@ -292,7 +296,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.aboutGoal', compact('aboutGoal','contacts','theme','logo','font','textcolor','categories','footimg'));
+          $colablink = $user->colablink;
+
+          return view('frontView.home.aboutGoal', compact('aboutGoal','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
         }
       // return view('frontView.home.aboutGoal',compact('aboutGoal'));
     }
@@ -324,7 +330,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.exhibition', compact('exhibitionIntro','contacts','theme','logo','font','textcolor','categories','footimg'));
+          $colablink = $user->colablink;
+
+          return view('frontView.home.exhibition', compact('exhibitionIntro','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
   
         }else{
   
@@ -344,7 +352,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.exhibition', compact('exhibitionIntro','contacts','theme','logo','font','textcolor','categories','footimg'));
+          $colablink = $user->colablink;
+
+          return view('frontView.home.exhibition', compact('exhibitionIntro','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
         }
       // return view('frontView.home.exhibition',compact('exhibitionIntro'));
     }
@@ -374,7 +384,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
         $categories = category::all();
         $footimg = $user->footimg;
         $mapimage = $user->mapimage;
-        return view('frontView.home.contact', compact('contact','contacts','theme','logo','font','textcolor','categories','footimg','mapimage'));
+        $colablink = $user->colablink;
+
+        return view('frontView.home.contact', compact('contact','contacts','theme','logo','font','textcolor','categories','footimg','mapimage','colablink'));
 
       }else{
 
@@ -390,8 +402,8 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
         $categories = category::all();
         $footimg = $user->footimg;
         $mapimage = $user->mapimage;
-
-        return view('frontView.home.contact', compact('contact','contacts','theme','logo','font','textcolor','categories','footimg','mapimage'));
+        $colablink = $user->colablink;
+        return view('frontView.home.contact', compact('contact','contacts','theme','logo','font','textcolor','categories','footimg','mapimage','colablink'));
       }
       
     // return view('frontView.home.contact',compact('contact'));
@@ -422,7 +434,8 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.staff', compact('staff','contacts','theme','logo','font','textcolor','categories','footimg'));
+          $colablink = $user->colablink;
+          return view('frontView.home.staff', compact('staff','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
   
         }else{
   
@@ -442,7 +455,8 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
           $textcolor = $user->textcolor;
           $categories = category::all();
           $footimg = $user->footimg;
-          return view('frontView.home.staff', compact('staff','contacts','theme','logo','font','textcolor','categories','footimg'));
+          $colablink = $user->colablink;
+          return view('frontView.home.staff', compact('staff','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
         }
       // return view('frontView.home.staff',compact('staff'));
     }
@@ -478,7 +492,8 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
                   $textcolor = $user->textcolor;
                   $categories = category::all();
                   $footimg = $user->footimg;
-                  return view('frontView.home.item', compact('items','contacts','theme','logo','font','textcolor','categories','footimg'));
+                  $colablink = $user->colablink;
+                  return view('frontView.home.item', compact('items','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
           
                 }else{
           
@@ -504,7 +519,8 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
                   $textcolor = $user->textcolor;
                   $categories = category::all();
                   $footimg = $user->footimg;
-                  return view('frontView.home.item', compact('items','contacts','theme','logo','font','textcolor','categories','footimg'));
+                  $colablink = $user->colablink;
+                  return view('frontView.home.item', compact('items','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
                 }
       // return view('frontView.home.item',['items'=>$items]); 
     }
@@ -599,7 +615,8 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
                   $textcolor = $user->textcolor;
                   $categories = category::all();
                   $footimg = $user->footimg;
-                  return view('frontView.home.singleItem', compact('item','contacts','theme','logo','font','textcolor','categories','footimg'));
+                  $colablink = $user->colablink;
+                  return view('frontView.home.singleItem', compact('item','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
           
                 }else{
           
@@ -618,7 +635,9 @@ $contacts = DB::table('contacts')->where('user_id',$museum_id)->first();
                   $textcolor = $user->textcolor;
                   $categories = category::all();
                   $footimg = $user->footimg;
-                  return view('frontView.home.singleItem', compact('item','contacts','theme','logo','font','textcolor','categories','footimg'));
+                  $colablink = $user->colablink;
+
+                  return view('frontView.home.singleItem', compact('item','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
                 }
 
       // return view('frontView.home.singleItem',['item'=>$itemById]); 

@@ -44,8 +44,8 @@ class GalleryController extends Controller
             $textcolor = $user->textcolor;
             $categories = category::all();
             $footimg = $user->footimg;
-            
-            return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg'));
+            $colablink = $user->colablink;
+            return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
     
           }else{
     
@@ -66,7 +66,8 @@ class GalleryController extends Controller
             $textcolor = $user->textcolor;
             $categories = category::all();
             $footimg = $user->footimg;
-            return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg'));
+            $colablink = $user->colablink;
+            return view('frontView.home.gallery', compact('imges','contacts','theme','logo','font','textcolor','categories','footimg','colablink'));
           }
         			 
     }
