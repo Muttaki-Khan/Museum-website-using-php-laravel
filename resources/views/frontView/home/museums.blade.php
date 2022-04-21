@@ -63,10 +63,93 @@ proses fotogrametri menukar gambar 2D kepada 3D</p><br>
             $i = 0;
             ?>
             <div class="panel-body">
+                <h1 class="{{ $font }}">Contest Results</h1>
+
+                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    
+                <thead>
+                        <tr>
+                            <th>Position.</th>
+                            <th>Winning Category</th>
+                            <th>Muzium</th>
+                            <th>Remarks</th>
+                            <th>Reward</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>1st</td>
+                                <td>First Prize and Overall Winner 
+                                Pemenang Pertama dan Pemenang Keseluruhan 
+                                </td>
+                                <td>Museum Seni Asia UM</td>
+                                <td>Received highest overall marks for digital platform and accomplished all requirements. Worth effort to generate relatively clear High resolution 3D image that is aesthetically presented to fit the selected artifact collection.</td>
+                                <td>1000 RM & Certificate</td>
+                            </tr>
+
+                            <tr>
+                                <td>2nd</td>
+                                <td>Best Effort for Machine Learning and Photogrammetry 
+Usaha Terbaik untuk Pembelajaran Mesin dan Fotogrammetri 
+                                </td>
+                                <td>Perbadanan Adat Melayu & Warisan Negeri Selangor</td>
+                                <td>The museum presented both ML and 3D image in its digital platform and fulfilled the criteria</td>
+                                <td>750 RM & Certificate</td>
+                            </tr>
+
+                            <tr>
+                                <td>3rd</td>
+                                <td>Best Generated 3D Image
+Imej 3D Terjana Terbaik
+                                </td>
+                                <td>Muzium UUM</td>
+                                <td>The theme is brought alive through the vibrant orange colour and the image of a child to reflect a bright future of museums with the younger generation. The rotating banner jives with the footing banner and shows its connectivity with other sections.</td>
+                                <td>500 RM & Certificate</td>
+                            </tr>
+
+                            <tr>
+                                <td>4th</td>
+                                <td>Best Organised  Theme
+Tema Tersusun Terbaik 
+                                </td>
+                                <td>Muzium UMT</td>
+                                <td>The theme is brought alive through the vibrant orange colour and the image of a child to reflect a bright future of museums with the younger generation. The rotating banner jives with the footing banner and shows its connectivity with other sections.</td>
+                                <td>Certificate</td>
+                            </tr>
+
+                            <tr>
+                                <td>5th</td>
+                                <td>Best  oral presentation
+Persembahan Lisan Terbaik 
+                                </td>
+                                <td>Muzium UMT</td>
+                                <td>The only library that participated, and made a good team effort to fulfil most criteria and presented a Gallery of Campus Memorabilia and Heritage </td>
+                                <td>Certificate</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>6th</td>
+                                <td>Gallery of Campus Memorabilia and Heritage 
+Hadiah untuk Koleksi Kenangan Kampus dan Warisan
+                                </td>
+                                <td>Perpustakaan UTMKL</td>
+                                <td>The only library that participated, and made a good team effort to fulfil most criteria and presented a Gallery of Campus Memorabilia and Heritage .</td>
+                                <td>Certificate</td>
+                            </tr>
+                             
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            <div class="panel-body">
                 <h1 class="{{ $font }}">Museums List</h1>
 
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                    <thead>
+                    
+                <thead>
                         <tr>
                             <th>SI.</th>
                             <th>Admin</th>
