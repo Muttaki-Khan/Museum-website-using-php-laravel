@@ -79,63 +79,60 @@ proses fotogrametri menukar gambar 2D kepada 3D</p><br>
                     <tbody>
                             <tr>
                                 <td>1st</td>
-                                <td>First Prize and Overall Winner 
-                                Pemenang Pertama dan Pemenang Keseluruhan 
+                                <td>Pemenang Pertama dan Pemenang Keseluruhan  
                                 </td>
                                 <td>Museum Seni Asia UM</td>
-                                <td>Received highest overall marks for digital platform and accomplished all requirements. Worth effort to generate relatively clear High resolution 3D image that is aesthetically presented to fit the selected artifact collection.</td>
-                                <td>1000 RM & Certificate</td>
+                                <td>Menerima markah keseluruhan tertinggi untuk platform digital dan memenuhi semua keperluan. Mempersembahkan imej 3D yang jelas yang dipersembahkan secara estetik dalam tema dramatik agar sesuai dengan koleksi artifak yang dipilih</td>
+                                <td>1000 RM dan Sijil</td>
                             </tr>
 
                             <tr>
                                 <td>2nd</td>
-                                <td>Best Effort for Machine Learning and Photogrammetry 
-Usaha Terbaik untuk Pembelajaran Mesin dan Fotogrammetri 
+                                <td>Usaha Terbaik untuk Pembelajaran Mesin dan Fotogrammetri 
                                 </td>
                                 <td>Perbadanan Adat Melayu & Warisan Negeri Selangor</td>
-                                <td>The museum presented both ML and 3D image in its digital platform and fulfilled the criteria</td>
-                                <td>750 RM & Certificate</td>
+                                <td>Muzium ini mempersembahkan ML dan imej 3D dalam platform digitalnya dan memenuhi kriteria.</td>
+                                <td>750 RM dan Sijil</td>
                             </tr>
 
                             <tr>
                                 <td>3rd</td>
-                                <td>Best Generated 3D Image
-Imej 3D Terjana Terbaik
+                                <td>Imej 3D Terjana Terbaik
                                 </td>
                                 <td>Muzium UUM</td>
-                                <td>The theme is brought alive through the vibrant orange colour and the image of a child to reflect a bright future of museums with the younger generation. The rotating banner jives with the footing banner and shows its connectivity with other sections.</td>
-                                <td>500 RM & Certificate</td>
+                                <td>Imej 3D yang dihasilkan adalah yang terbaik dalam kalangan peserta; kurang kebisingan dan imej yang jelas dikeluarkan..</td>
+                                <td>500 RM dan Sijil</td>
                             </tr>
 
                             <tr>
                                 <td>4th</td>
-                                <td>Best Organised  Theme
-Tema Tersusun Terbaik 
+                                <td>Tema Tersusun Terbaik
                                 </td>
-                                <td>Muzium UMT</td>
-                                <td>The theme is brought alive through the vibrant orange colour and the image of a child to reflect a bright future of museums with the younger generation. The rotating banner jives with the footing banner and shows its connectivity with other sections.</td>
-                                <td>Certificate</td>
+                                <td>Muzium & Galeri Tuanku Fauziah (MGTF) USM </td>
+                                <td>Tema ini dihidupkan melalui warna oren yang bersemangat dan imej kanak-kanak untuk mencerminkan masa depan muzium yang cerah bersama generasi muda. Sepanduk berputar bergegar dengan sepanduk tapak dan menunjukkan ketersambungannya dengan bahagian lain.</td>
+                                <td>100 RM dan Sijil</td>
                             </tr>
 
                             <tr>
                                 <td>5th</td>
-                                <td>Best  oral presentation
-Persembahan Lisan Terbaik 
+                                <td>Galeri Koleksi Kenangan Kampus dan Warisan
+Or
+Award for Best Team Effort 
+
                                 </td>
-                                <td>Muzium UMT</td>
-                                <td>The only library that participated, and made a good team effort to fulfil most criteria and presented a Gallery of Campus Memorabilia and Heritage </td>
-                                <td>Certificate</td>
+                                <td>Perpustakaan UTMKL</td>
+                                <td>Satu-satunya perpustakaan yang mengambil bahagian, dan menunjukkan usaha pasukan yang baik untuk memenuhi kebanyakan kriteria dan mempersembahkan Galeri Kenangan dan Warisan Kampus.</td>
+                                <td>100 RM dan Sijil</td>
                             </tr>
 
 
                             <tr>
                                 <td>6th</td>
-                                <td>Gallery of Campus Memorabilia and Heritage 
-Hadiah untuk Koleksi Kenangan Kampus dan Warisan
+                                <td>Persembahan Lisan Terbaik
                                 </td>
-                                <td>Perpustakaan UTMKL</td>
-                                <td>The only library that participated, and made a good team effort to fulfil most criteria and presented a Gallery of Campus Memorabilia and Heritage .</td>
-                                <td>Certificate</td>
+                                <td>Muzium UMT</td>
+                                <td>A presentation that is well discussed,  clearly explained and demonstrates knowledge of the contents.</td>
+                                <td>Certificate (institution) and Best Speaker Award?</td>
                             </tr>
                              
                     </tbody>
