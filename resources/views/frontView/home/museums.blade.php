@@ -131,8 +131,8 @@ Award for Best Team Effort
                                 <td>Persembahan Lisan Terbaik
                                 </td>
                                 <td>Muzium UMT</td>
-                                <td>A presentation that is well discussed,  clearly explained and demonstrates knowledge of the contents.</td>
-                                <td>Certificate (institution) and Best Speaker Award?</td>
+                                <td>Persembahan yang dibincangkan dengan baik, diterangkan dengan jelas dan menunjukkan pengetahuan tentang kandungan.</td>
+                                <td>100 RM dan Sijil</td>
                             </tr>
                              
                     </tbody>
@@ -143,6 +143,11 @@ Award for Best Team Effort
 
             <div class="panel-body">
                 <h1 class="{{ $font }}">Museums List</h1>
+                <h2 class="{{ $font }}">Instructons</h2>
+                <p class="{{ $font }}">1. Click <b>"Select"</b> to choose museum</p>
+                <p class="{{ $font }}">2. Click <b>"Go to Museum"</b> to view chosen museum website</p>
+
+
 
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     
@@ -151,6 +156,7 @@ Award for Best Team Effort
                             <th>SI.</th>
                             <th>Admin</th>
                             <th>Action</th>
+                            <th>View</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -163,15 +169,14 @@ Award for Best Team Effort
                                         @csrf
                                         <input type="hidden" , name="user_id" , value="{{ $user->id }}">
                                         <input type="hidden" , name="role_id" , value="{{ $user->role_id }}">
-                                        <input type="submit"
+                                        <input type="submit" 
                                             class="button {{ $theme }} {{ $font }} {{ $textcolor }}"
                                             value="Select" />
-
                                     </form>
 
-
                                 </td>
-
+                                <td><button> <a href="{{ url('/') }}"
+                                    style="width:200%" class="img-fluid" alt=""> Go to Museum</a></button></td>
 
                             </tr>
                         @endforeach
