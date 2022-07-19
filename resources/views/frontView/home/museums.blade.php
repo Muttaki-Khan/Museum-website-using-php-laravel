@@ -53,7 +53,7 @@
             <br>
 
 
-            <h1 style="text-align: center;">Pengenalan</h1><br>
+            <!-- <h1 style="text-align: center;">Pengenalan</h1><br>
             <p style="text-align: center;">Di dalam era kemajuan teknologi komputer, perubahan budaya teknologi bukan sahaja menyentuh sektor industri, malah ia juga dapat memberi kesan kepada pemeliharaan warisan budaya. Kesinambungan daripada projek sebelum ini iaitu Pembelajaran mesin bagi pengelasan Kendi untuk pemeliharaan warisan budaya, program ini pula cuba mempertengahkan pemeliharaan ini melalui laman web muzium digital dan pengenalan kepada pembelajaran mesin. Program ini adalah anjuran bersama Fakulti Sains Komputer dan Teknologi Maklumat, Fakulti Kejuruteraan, Fakulti Seni Kreatif dan Muzium Seni Asia Universiti Malaya. Program ini melibatkan pemindahan ilmu (latihan):
 pembinaan/ penggunaan laman web untuk proses pendigitalan artifak muzium
 aplikasi algoritma pembelajaran mesin untuk pengecaman artifak 
@@ -138,7 +138,7 @@ Award for Best Team Effort
                     </tbody>
                 </table>
 
-            </div>
+            </div> -->
 
 
             <div class="panel-body">
@@ -164,14 +164,14 @@ Award for Best Team Effort
                             <tr>
                                 <td>{{ ++$i }}</td>
                                 <td>{{ $user->name }}</td>
-                                <td>
-                                    <form action="{{ route('museums') }}" method="post">
+                                
+                                <td>   <form action="{{ route('museums') }}" method="post">
                                         @csrf
                                         <input type="hidden" , name="user_id" , value="{{ $user->id }}">
                                         <input type="hidden" , name="role_id" , value="{{ $user->role_id }}">
                                         <input type="submit" 
                                             class="button {{ $theme }} {{ $font }} {{ $textcolor }}"
-                                            value="Select" />
+                                            value="Select"/>
                                     </form>
 
                                 </td>

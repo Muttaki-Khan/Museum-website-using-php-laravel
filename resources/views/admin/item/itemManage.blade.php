@@ -46,7 +46,7 @@
                                 		<td><img src="{{asset($item->pic)}}" width="60"alt-"no pic"></td>
                                 		
                                 		<td>{{$item->information}}</td>
-                                		<td><a href="{{url('/item/view/'.$item->id)}}" target="_blank">View</a> |<a href="{{url('/item/edit/'.$item->id)}}" target="_blank">Edit</a> |<a href="{{url('/item/delete/'.$item->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/item/view/'.$item->id)}}" target="_blank">View</a> |<a href="{{url('/item/edit/'.$item->id)}}" >Edit</a> |<a href="{{url('/item/delete/'.$item->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach
